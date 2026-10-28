@@ -35,7 +35,7 @@ export function buildRssFeed(): string {
   <channel>
     <title>Palworld Hacks Blog</title>
     <link>${SITE_ORIGIN}/blog/</link>
-    <description>Palworld cheat guides, patch notes, and setup walkthroughs from localhost:4321.</description>
+    <description>Palworld cheat guides, patch notes, and setup walkthroughs from getpalworldhack.net.</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${feedUrl}" rel="self" type="application/rss+xml" />

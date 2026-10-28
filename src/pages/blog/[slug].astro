@@ -24,6 +24,7 @@ import { Button } from '@/components/starwind/button';
 import { Prose } from '@/components/starwind/prose';
 import BlogPostCta from '../../components/BlogPostCta.astro';
 import { normalizeInternalPath, ROUTES } from '../../utils/path';
+import { topicHubForBlogPost } from '../../data/blog-topic-hubs';
 
 export function getStaticPaths() {
   return getAllBlogSlugs().map((slug) => ({ params: { slug } }));
@@ -66,6 +67,7 @@ function slugify(text: string): string {
     .replace(/^-|-$/g, '');
 }
 const published = parseBlogDate(post.date);
+const topicHub = topicHubForBlogPost(post.tag, post.slug);
 ---
 
 <BaseLayout
@@ -111,6 +113,15 @@ const published = parseBlogDate(post.date);
           </figure>
 
           <header class="blog-article__header">
+            <p class="mb-3 text-sm">
+              <a href={topicHub.href} class="font-medium text-primary hover:underline">
+                ← {topicHub.label}
+              </a>
+              {' · '}
+              <a href="/download/" class="text-muted-foreground hover:text-primary">Download</a>
+              {' · '}
+              <a href="/how-to-install/" class="text-muted-foreground hover:text-primary">Install guide</a>
+            </p>
             <h1 class="blog-article__title">{post.title}</h1>
             <p class="blog-article__lead">{post.desc}</p>
             {

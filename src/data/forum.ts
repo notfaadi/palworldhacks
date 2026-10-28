@@ -162,7 +162,7 @@ const additionalGuidePosts: ForumPost[] = [
     tip: 'Use the linked product and support pages as the source of truth for current availability and compatibility.',
   }),
   guideDiscussion({
-    slug: 'how-to-choose-palworld-2-product-tier', title: 'How do I choose the right Palworld product tier?', upvotes: 48,
+    slug: 'how-to-choose-palworld-product-tier', title: 'How do I choose the right Palworld product tier?', upvotes: 48,
     excerpt: 'Compare the feature sets first, then follow the official checkout and setup instructions for your selection.',
     category: 'Community', categoryTone: 'green', sourceTitle: 'How to buy Palworld hacks in 2026', sourcePath: '/blog/how-to-buy-palworld-cheats-2026/',
     answer: 'The buying guide recommends comparing included features and choosing the tier that fits your needs before continuing through the official checkout.',
@@ -174,11 +174,11 @@ const additionalGuidePosts: ForumPost[] = [
 export const forumPosts: ForumPost[] = [
   {
     slug: 'can-custom-lobby-cheat-codes-be-used-in-ranked', category: 'General', categoryTone: 'purple',
-    title: 'Can I use Palworld cheat codes in ranked matchmaking?',
+    title: 'Can I use Palworld cheat codes in online co-op with anti-cheat?',
     excerpt: 'Quick answer from the practice lobby guide: built-in lobby commands only work in custom matches with cheats enabled.',
     author: 'guide_team', age: '2 hours ago', commentsCount: 3, upvotes: 128, flair: 'Guide Q&A',
     sourceTitle: 'Palworld cheat codes guide: console commands for practice lobbies', sourcePath: '/blog/palworld-cheat-codes-guide/',
-    body: ['No. Creative islands and bot lobbies are for practice only. They do not carry into Ranked matchmaking or Co-op.', 'Use Creative to learn aimbot smoothness, ESP ranges, and loadouts. The guide also explains the difference between practice drills and third-party palworld hacks.'],
+    body: ['No. Private Palworld worlds and bot lobbies are for practice only. They do not carry into online co-op with anti-cheat or Co-op.', 'Use Creative to learn aimbot smoothness, ESP ranges, and loadouts. The guide also explains the difference between practice drills and third-party palworld hacks.'],
     comments: [
       { author: 'mid_or_feed', age: '1 hour ago', score: 24, body: 'Correct: load a Creative aim map or bot lobby before touching Ranked presets.' },
       { author: 'ancient_archivist', age: '48 min. ago', score: 11, body: 'The guide covers AR, SMG, and shotgun drills. Keep Ranked presets conservative after practice.' },
@@ -186,7 +186,7 @@ export const forumPosts: ForumPost[] = [
     ],
   },
   {
-    slug: 'how-to-enable-the-palworld-2-console', category: 'General', categoryTone: 'purple',
+    slug: 'how-to-enable-the-palworld-console', category: 'General', categoryTone: 'purple',
     title: 'How do I turn on the Palworld developer console?',
     excerpt: 'Open Settings → Options → Advanced and enable the console. Here is the quick setup from our walkthrough.',
     author: 'guide_team', age: '4 hours ago', commentsCount: 2, upvotes: 86, flair: 'Guide Q&A',
@@ -200,29 +200,29 @@ export const forumPosts: ForumPost[] = [
   {
     slug: 'practice-palworld-high-ground-safely', category: 'Guides & Builds', categoryTone: 'blue',
     title: 'What is the safest way to practice high-ground spots?',
-    excerpt: 'Use Creative or a bot lobby with ESP to study sight lines, then fight without staring at overlays.',
+    excerpt: 'Use a private co-op world with ESP to study sight lines, then fight without staring at overlays.',
     author: 'guide_team', age: '6 hours ago', commentsCount: 2, upvotes: 64, flair: 'Guide Q&A',
     sourceTitle: 'Palworld Creative tips for aimbot and ESP practice', sourcePath: '/blog/palworld-console-cheats-tips/',
-    body: ['Practice in Creative or a bot lobby. Enable ESP boxes briefly to inspect high-ground angles and chest positions, then fight with overlays minimized.', 'Repeat the same POI clear a few times so sight lines stick without waiting for a full Ranked match.'],
+    body: ['Practice in a private co-op world. Enable ESP boxes briefly to inspect high-ground angles and chest positions, then fight with overlays minimized.', 'Repeat the same POI clear a few times so sight lines stick without waiting for a full Ranked match.'],
     comments: [
       { author: 'stack_and_pull', age: '5 hours ago', score: 13, body: 'I peek with ESP on, then disable boxes and re-check the same angle. Helps for high-ground coverage.' },
-      { author: 'map_reader', age: '4 hours ago', score: 6, body: 'Replaying the same POI path in Creative beats learning only in Ranked.' },
+      { author: 'map_reader', age: '4 hours ago', score: 6, body: 'Replaying the same POI path in a private world beats learning only in co-op.' },
     ],
   },
   {
-    slug: 'what-to-check-after-a-palworld-2-patch', category: 'Patch Talk', categoryTone: 'orange',
+    slug: 'what-to-check-after-a-palworld-patch', category: 'Patch Talk', categoryTone: 'orange',
     title: 'What should I check before playing after a Palworld patch?',
     excerpt: 'The patch-day checklist recommends checking build status, updating, and testing in a bot lobby before queueing.',
     author: 'guide_team', age: '9 hours ago', commentsCount: 2, upvotes: 42, flair: 'Guide Q&A',
     sourceTitle: 'anti-cheat patch day checklist', sourcePath: '/blog/eac-patch-day-checklist/',
-    body: ['Check the current build/status notice first. After a game update, wait for a compatible build, update the loader, then verify the setup in a bot or Co-op lobby before returning to ranked.', 'If anything behaves unexpectedly, stop and review the status notes rather than assuming the old setup still applies. The checklist covers the patch-day routine in more detail.'],
+    body: ['Check the current build/status notice first. After a game update, wait for a compatible build, update the loader, then verify the setup in a bot or Co-op lobby before returning to co-op.', 'If anything behaves unexpectedly, stop and review the status notes rather than assuming the old setup still applies. The checklist covers the patch-day routine in more detail.'],
     comments: [
-      { author: 'farm_pattern', age: '8 hours ago', score: 12, body: 'Testing after the update before ranked is the part I used to skip. Now I check the build note and run a quick bot lobby.' },
+      { author: 'farm_pattern', age: '8 hours ago', score: 12, body: 'Testing after the update before co-op is the part I used to skip. Now I check the build note and run a quick bot lobby.' },
       { author: 'support_main_5', age: '7 hours ago', score: 7, body: 'Agree. If the build/status has not caught up, wait. A checklist is better than guessing.' },
     ],
   },
   {
-    slug: 'palworld-2-lite-or-pro-hero-scripts', category: 'Community', categoryTone: 'green',
+    slug: 'palworld-lite-or-pro-hero-scripts', category: 'Community', categoryTone: 'green',
     title: 'Lite or Pro: which tier includes player aimbot?',
     excerpt: 'Our comparison guide breaks down the difference: Lite focuses on vision tools; Pro adds script modules.',
     author: 'guide_team', age: '12 hours ago', commentsCount: 1, upvotes: 31, flair: 'Guide Q&A',
@@ -237,8 +237,8 @@ export const forumPosts: ForumPost[] = [
     title: 'How can I practice weapon aim without waiting for a real match?',
     excerpt: 'Create a Creative island or bot lobby and drill AR, SMG, and shotgun profiles with repeatable resets.',
     author: 'guide_team', age: '1 day ago', commentsCount: 2, upvotes: 27, flair: 'Guide Q&A',
-    sourceTitle: 'Palworld Creative practice guide: aim drills before ranked', sourcePath: '/blog/palworld-cheat-codes-guide/',
-    body: ['Create a Creative island or bot lobby. Practice one weapon profile at a time—AR, SMG, then shotgun—and reset between attempts.', 'For realistic timing, use your Ranked smoothness values in Creative before enabling aimbot in live games. The linked guide covers the full practice workflow.'],
+    sourceTitle: 'Palworld Creative practice guide: aim drills before co-op', sourcePath: '/blog/palworld-cheat-codes-guide/',
+    body: ['Create a Creative island or bot lobby. Practice one weapon profile at a time—AR, SMG, then shotgun—and reset between attempts.', 'For realistic timing, use your Ranked smoothness values in a private world before enabling aimbot in live games. The linked guide covers the full practice workflow.'],
     comments: [
       { author: 'mid_or_feed', age: '20 hours ago', score: 10, body: 'Start with a bot target and repeat the same spray until the tracking feels automatic.' },
       { author: 'ancient_archivist', age: '18 hours ago', score: 5, body: 'Keep Ranked presets conservative—Creative can hide how snappy your aim looks in replays.' },

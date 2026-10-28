@@ -12,6 +12,8 @@ import {
 } from '@/components/starwind/sheet';
 import Icon from './icons/Icon.astro';
 import SlideRevealButton from './SlideRevealButton.astro';
+import HeaderGuidesMenu from './HeaderGuidesMenu.astro';
+import { SEO_HUB_LINKS } from '../data/seo';
 
 import type { IconName } from './icons/types';
 
@@ -35,7 +37,8 @@ const purchaseUrl = checkoutPath('palworld');
       <span class="truncate" aria-hidden="true">Palworld<span class="text-primary">Hacks</span></span>
     </a>
 
-    <nav class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 lg:flex" aria-label="Primary">
+    <nav class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-5 lg:flex" aria-label="Primary">
+      <HeaderGuidesMenu />
       {t.nav.map((link) => (
         <a
           href={link.href}
@@ -72,6 +75,18 @@ const purchaseUrl = checkoutPath('palworld');
             <SheetTitle>{t.site.name}</SheetTitle>
           </SheetHeader>
           <nav class="flex flex-col gap-1" aria-label="Mobile">
+            <p class="px-3 pt-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Guides</p>
+            {
+              SEO_HUB_LINKS.slice(0, 6).map((link) => (
+                <a
+                  href={link.href}
+                  class="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-primary"
+                >
+                  {link.label}
+                </a>
+              ))
+            }
+            <p class="px-3 pt-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Site</p>
             {t.nav.map((link) => (
               <a
                 href={link.href}

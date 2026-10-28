@@ -1,6 +1,8 @@
 ---
 import SeoGuideLayout from '../../layouts/SeoGuideLayout.astro';
 import { SEO_INTROS } from '../../data/seo-intros';
+import SeoDataTable from '../../components/SeoDataTable.astro';
+import { palworldTrainerSources, trainerFeatureList } from '../../data/palworld-trainers';
 ---
 
 <SeoGuideLayout
@@ -8,21 +10,32 @@ import { SEO_INTROS } from '../../data/seo-intros';
   breadcrumbLabel="Trainers"
   intro={SEO_INTROS['/palworld-trainers/']!}
 >
-  <h2>Palworld trainer download and cheat engine tables</h2>
+  <h2>Palworld trainer download options (Steam and Game Pass PC)</h2>
   <p>
-    Match FLiNG-style Palworld trainer downloads to your storefront: Steam validates under Program Files (x86),
-    while Game Pass PC lives under WindowsApps with different permissions. WeMod can work but often lags
-    Pocketpair hotfixes—keep a backup cheat engine table tagged for 1.0.5.
+    A Palworld trainer should stay external and RAM-based on patch 1.0.5 — that is our trust basis for calling tools
+    lower-profile than DLL injectors on live co-op. We document sources below; grab the curated readme pack from{' '}
+    <a href="/download/">download</a> and follow <a href="/how-to-install/">install steps</a> before enabling god mode.
   </p>
+  <SeoDataTable
+    caption="Trainer types — always verify 1.0.5 compatibility before launching Palworld"
+    columns={[
+      { key: 'name', label: 'Source type' },
+      { key: 'type', label: 'Architecture' },
+      { key: 'platform', label: 'Platform' },
+      { key: 'notes', label: 'Notes' },
+    ]}
+    rows={palworldTrainerSources}
+  />
+  <h2>Palworld cheat engine table features</h2>
+  <ul>
+    {trainerFeatureList.map((item) => (
+      <li>{item}</li>
+    ))}
+  </ul>
   <h2>Undetected Palworld trainers — external, RAM-based</h2>
   <p>
-    We only recommend external, RAM-based trainers that do not inject DLLs into Palworld.exe. That is our trust
-    basis for calling a build “undetected” relative to naive internals—it is not a guarantee against Easy
-    Anti-Cheat or player reports on public co-op.
+    Easy Anti-Cheat still watches behavior on official realms. Use private servers or offline saves when testing infinite
+    stamina, loot magnets or capture rate edits. Read the <a href="/faq/">safety FAQ</a> before joining public co-op with
+    any Palworld trainer.
   </p>
-  <ul>
-    <li>God mode and infinite stamina toggles for solo worlds</li>
-    <li>100% capture rate and breeding stat edits for private hosts</li>
-    <li>Instant crafting and Technology Points sliders where supported</li>
-  </ul>
 </SeoGuideLayout>

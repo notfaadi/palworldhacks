@@ -102,7 +102,7 @@ const defaultAcquisitionSteps: AcquisitionStep[] = [
   {
     num: '01',
     title: 'Review current status',
-    desc: 'Check the live banner on localhost:4321 and Discord #status before purchase—especially after a Palworld or anti-cheat update.',
+    desc: 'Check the live banner on getpalworldhack.net and Discord #status before purchase—especially after a Palworld or anti-cheat update.',
   },
   {
     num: '02',
@@ -129,7 +129,7 @@ function acquisitionFor(productName: string): ProductAcquisition {
 }
 
 const sharedGoodToKnow =
-  'Palworld and anti-cheat receive frequent updates. Confirm module availability on the live status panel at localhost:4321 before you purchase or launch. Overlay behavior may differ in lobbies, replays and spectator mode after patches.';
+  'Palworld and anti-cheat receive frequent updates. Confirm module availability on the live status panel at getpalworldhack.net before you purchase or launch. Overlay behavior may differ in lobbies, replays and spectator mode after patches.';
 
 const sharedLimitations =
   'Third-party software in Palworld can violate Steam Terms of Service and lead to anti-cheat bans or account action. You use this software at your own risk. Compatibility and availability can change after game, EAC, or Windows updates without notice.';
@@ -266,7 +266,7 @@ const tierAbout: Record<string, ProductPage['about']> = {
   lite: [
     {
       type: 'p',
-      text: 'Palworld Lite is built for players who want map awareness first. In ranked, knowing enemy positions, chest locations and loot timings wins more fights than raw mechanics—Lite gives you that edge without aimbot automation.',
+      text: 'Palworld Lite is built for players who want map awareness first. in co-op, knowing enemy positions, chest locations and loot timings wins more fights than raw mechanics—Lite gives you that edge without aimbot automation.',
     },
     { type: 'h2', text: 'Ranked-safe by design' },
     {
@@ -315,19 +315,19 @@ const tierBodies: Record<string, ProductPage['body']> = {
     { type: 'h2', text: 'Aimbot and automation' },
     {
       type: 'p',
-      text: 'Aimbot, Smooth Aim, Sticky Aim with Prediction, Bone Priority and hotkey macros for heals and mobility. Smoothness sliders tunes cast timing so aimbot stay natural in ranked. Start with portal presets, not max sliders.',
+      text: 'Aimbot, Smooth Aim, Sticky Aim with Prediction, Bone Priority and hotkey macros for heals and mobility. Smoothness sliders tunes cast timing so aimbot stay natural in co-op. Start with portal presets, not max sliders.',
     },
     { type: 'h2', text: 'Recommended pairing' },
     {
       type: 'p',
-      text: 'Pro is the most popular tier at localhost:4321—enough firepower for high-rank lobbies without Elite slot limits. Pair with our aimbot guide in the blog before your first ranked session.',
+      text: 'Pro is the most popular tier at getpalworldhack.net—enough firepower for high-rank lobbies without Elite slot limits. Pair with our aimbot guide in the blog before your first ranked session.',
     },
   ],
   elite: [
     { type: 'h2', text: 'Full bot and finish suite' },
     {
       type: 'p',
-      text: 'Loot Assist, Rotation Assist AI, Auto Finish, Auto Shield Break, Skin Changer and full ESP wallhack with smoke alerts. Use lobby testing before ranked—Elite power requires disciplined profiles, not rage settings.',
+      text: 'Loot Assist, Rotation Assist AI, Auto Finish, Auto Shield Break, Skin Changer and full ESP wallhack with smoke alerts. Use lobby testing before co-op—Elite power requires disciplined profiles, not rage settings.',
     },
     { type: 'h2', text: 'Availability' },
     {
@@ -347,7 +347,7 @@ const utilityBodies: Record<string, ProductPage['body']> = {
     { type: 'h2', text: 'Full workflow' },
     {
       type: 'p',
-      text: 'Restore point, driver cleanup, spoof application, cold reboot, identifier verification, then conservative cheat profile before ranked. Full checklist ships in the portal and in our HWID blog guide.',
+      text: 'Restore point, driver cleanup, spoof application, cold reboot, identifier verification, then conservative cheat profile before co-op. Full checklist ships in the portal and in our HWID blog guide.',
     },
   ],
   'ugc': [
@@ -479,7 +479,7 @@ const productContent: Record<
       title: 'Palworld Elite: full cheat + extras',
       paragraphs: [
         'Elite includes Lite and Pro modules, plus loot assist, Auto Finish, Auto Shield Break, Skin Changer, full ESP wallhack and faster patch priority.',
-        'Slots are limited. Discord support helps you set safer profiles before Ranked. Check the status banner on localhost:4321 before you buy.',
+        'Slots are limited. Discord support helps you set safer profiles before co-op. Check the status banner on getpalworldhack.net before you buy.',
       ],
     },
   },
@@ -543,7 +543,7 @@ const productContent: Record<
       title: 'HWID Spoofer for Palworld PC bans',
       paragraphs: [
         'Use the HWID Spoofer when Palworld anti-cheat flags your PC hardware but the Steam account is still fine. Includes disk and MAC tools, a restore-point checklist, a compatibility scan and post-spoof checks.',
-        'Use it when new accounts die on one PC but work on another. It does not fix account-only anti-cheat bans. After spoofing, use a safer cheat profile before Ranked.',
+        'Use it when new accounts die on one PC but work on another. It does not fix account-only anti-cheat bans. After spoofing, use a safer cheat profile before co-op.',
       ],
     },
   },
@@ -554,7 +554,7 @@ const productContent: Record<
     limitations:
       'UGC does not guarantee account restoration. Results vary by case type. Permanent anti-cheat bans may require a new account path instead of appeal.',
     systemRequirements: [
-      { icon: 'reqMailOrder', text: 'Order email used at checkout on localhost:4321 or at checkout on localhost:4321.' },
+      { icon: 'reqMailOrder', text: 'Order email used at checkout on getpalworldhack.net or at checkout on getpalworldhack.net.' },
       { icon: 'reqShieldAccount', text: 'Account details and ban or restriction notification if available.' },
       { icon: 'reqWifiPortal', text: 'Internet access for Discord support and case dashboard.' },
     ],

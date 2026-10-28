@@ -1,27 +1,46 @@
 ---
 import SeoGuideLayout from '../../layouts/SeoGuideLayout.astro';
 import { SEO_INTROS } from '../../data/seo-intros';
+import SeoDataTable from '../../components/SeoDataTable.astro';
+import { palworldCheatCodeTips, palworldConsoleCommands } from '../../data/palworld-console-commands';
+import { itemListSchema } from '../../utils/schema';
 ---
 
 <SeoGuideLayout
   pathname="/palworld-console-commands/"
   breadcrumbLabel="Console commands"
   intro={SEO_INTROS['/palworld-console-commands/']!}
+  jsonLd={itemListSchema(
+    palworldConsoleCommands.map((row) => ({
+      name: row.command,
+      url: '/palworld-console-commands/',
+    })),
+  )}
 >
-  <h2>Palworld admin commands and spawn syntax</h2>
+  <h2>Palworld console commands — admin cheat codes</h2>
   <p>
-    Open the admin console on dedicated servers with the password Pocketpair documents for 1.0.x. Offline worlds
-    may expose different flags—always check patch notes when a hotfix renames cheat codes.
+    Pocketpair exposes these Palworld console commands on dedicated servers and some offline admin sessions. They are
+    the cleanest “cheat codes” when you host co-op for friends on Windows 10 or 11 — no trainer required if you trust
+    the server password.
   </p>
-  <h2>Palworld cheat codes for items and XP</h2>
+  <SeoDataTable
+    caption="Copy commands into the dedicated server console — Palworld 1.0.5"
+    columns={[
+      { key: 'command', label: 'Command' },
+      { key: 'example', label: 'Example' },
+      { key: 'notes', label: 'Notes' },
+    ]}
+    rows={palworldConsoleCommands}
+  />
+  <h2>Palworld cheat codes — safety on Steam and Game Pass</h2>
   <ul>
-    <li><code>GiveItem</code> — spawn by Palworld item IDs (see item spawner hub)</li>
-    <li>Teleport coordinates for towers, bases and Jetragon nests</li>
-    <li>XP and Technology Points boosts for private progression tests</li>
+    {palworldCheatCodeTips.map((tip) => (
+      <li>{tip}</li>
+    ))}
   </ul>
-  <h2>Palworld spawn command examples</h2>
   <p>
-    Copy commands into your server console; never paste untrusted strings from random forums. Pair this list with
-    our trainer guide if you prefer hotkeys over typing admin lines each session.
+    Need item names for <code>GiveItem</code>? Use our{' '}
+    <a href="/palworld-item-spawner/">Palworld item spawner and item IDs</a> table, then{' '}
+    <a href="/download/">download</a> the trainer pack if you prefer hotkeys over typing admin lines.
   </p>
 </SeoGuideLayout>

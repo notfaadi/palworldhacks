@@ -27,10 +27,10 @@ export const en: Translations = {
     titleLine2: 'Free Trainers, Mod Menu and Console Commands',
     subtitle:
       'Palworld hacks for Steam and Xbox Game Pass PC on Pocketpair 1.0.5 — free trainers, god mode, item IDs and mod menus. Updated after every 1.0.x patch, no survey.',
-    ctaPrimary: 'Buy cheats',
+    ctaPrimary: 'Free download',
     ctaCloudDma: 'Buy Cloud DMA',
     modesLabel: 'Modes',
-    modes: ['Open World', 'Co-op', 'Ranked', 'Creative'],
+    modes: ['Open World', 'Co-op', 'PvP Bases', 'Private Server'],
     metrics: [
       { label: 'Stream-safe', strong: 'Yes' },
       { label: 'Patch speed', strong: '<24h' },
@@ -61,11 +61,11 @@ export const en: Translations = {
       {
         title: 'ESP / Wallhack',
         subtitle: 'See players through builds',
-        desc: 'Boxes, skeletons, distance and health on enemies through walls and builds.',
+        desc: 'Boxes, skeletons, distance and health on players and Pals through bases and terrain.',
         bullets: [
-          'Player boxes, skeletons, HP and distance',
-          'Team colors and wall visibility',
-          'Alerts when enemies push or go missing',
+          'Player and Pal boxes with HP and distance',
+          'Guild raid and co-op team colors',
+          'Alerts when bosses or raiders enter ESP range',
         ],
         tags: ['palworld ESP', 'wallhack', 'player boxes'],
         bento: 'sm:col-span-2 lg:col-span-8 lg:col-start-1 lg:row-start-2',
@@ -73,25 +73,25 @@ export const en: Translations = {
       {
         title: 'Radar',
         subtitle: 'Know where fights are',
-        desc: '2D radar for nearby enemies, storm edge and fights around you.',
-        bullets: ['Enemy dots on mini-radar', 'Storm and POI markers', 'Works with ESP wallhack'],
+        desc: '2D radar for nearby players, Pals and supply drops around your base.',
+        bullets: ['Raiders on mini-radar', 'Boss and tower POI markers', 'Works with ESP wallhack'],
         tags: ['palworld radar', 'mini-map', 'rotations'],
         bento: 'sm:col-span-2 lg:col-span-6 lg:col-start-1 lg:row-start-3',
       },
       {
         title: 'Loot / Chest ESP',
         subtitle: 'Find chests and loot',
-        desc: 'Shows chests, floor loot and rare drops with distance so you can loot and leave faster.',
-        bullets: ['Chest and floor-loot ESP', 'Rare and mythic markers', 'Reboot van and supply drop hints'],
+        desc: 'Shows chests, Pal spheres, ore nodes and rare drops with distance for faster farming.',
+        bullets: ['Dungeon chest ESP', 'Sphere and material markers', 'Lifmunk Effigy and tech point hints'],
         tags: ['chest ESP', 'loot ESP', 'POI'],
         bento: 'sm:col-span-2 lg:col-span-6 lg:col-start-7 lg:row-start-3',
       },
       {
         title: 'Skin Changer',
         subtitle: 'Local outfit preview',
-        desc: 'Preview outfits, wraps and pickaxes on your client only. Does not change Steam store purchases.',
+        desc: 'Preview outfits and weapons on your client only. Does not change Steam inventory.',
         bullets: [
-          'Outfit, wrap and pickaxe preview',
+          'Outfit and weapon skin preview',
           'Favorites and loadout export',
           'Included with Elite or sold as Unlock All',
         ],
@@ -122,10 +122,10 @@ export const en: Translations = {
       },
       {
         title: 'Modes',
-        subtitle: 'BR, Co-op, Ranked, Creative',
-        desc: 'Presets for Open World, Co-op, Ranked and Creative practice maps.',
-        bullets: ['Open World and Co-op presets', 'Safer Ranked defaults', 'Creative maps for aim practice'],
-        tags: ['Open World', 'Co-op', 'Ranked'],
+        subtitle: 'World, Co-op, PvP, Private',
+        desc: 'Presets for solo worlds, co-op, guild PvP and dedicated private servers on 1.0.5.',
+        bullets: ['Open World farming presets', 'Safer co-op defaults', 'Private server admin notes'],
+        tags: ['Open World', 'Co-op', 'PvP'],
         bento: 'sm:col-span-2 lg:col-span-6 lg:col-start-7 lg:row-start-6',
       },
       {
@@ -146,7 +146,7 @@ export const en: Translations = {
     eyebrow: 'Why our cheats',
     title: 'Palworld hacks that stay online',
     subtitle:
-      'Most cheat shops go down after anti-cheat patches and leave you with bots. We ship loader updates fast, keep aimbot defaults safe for Ranked, and answer on Discord 24/7.',
+      'Most cheat shops go down after Pocketpair patches and leave you with dead links. We ship loader updates fast, keep combat defaults sane for co-op, and answer on Discord 24/7.',
     usLabel: 'Palworld Hacks',
     otherLabel: 'Typical shop',
     rows: [
@@ -156,7 +156,7 @@ export const en: Translations = {
       },
       {
         title: 'Smooth aimbot defaults',
-        desc: 'Default smoothness, FOV and bone priority are set for Ranked. You can tighten them later if you want.',
+        desc: 'Default smoothness, FOV and Pal weak-spot priority are tuned for co-op and base raids.',
       },
       {
         title: 'Discord support',
@@ -189,7 +189,7 @@ export const en: Translations = {
       {
         value: '300+',
         title: 'Users',
-        desc: 'PC players using aimbot, ESP and tools on localhost:4321.',
+        desc: 'PC players using aimbot, ESP and tools on getpalworldhack.net.',
       },
     ],
   },
@@ -212,7 +212,7 @@ export const en: Translations = {
       {
         step: 'Step 2',
         title: 'Load presets',
-        desc: 'Run the loader, pick a Ranked or Co-op preset, and set aimbot and ESP.',
+        desc: 'Run the loader, pick an Open World or co-op preset, and set aimbot and ESP.',
       },
       {
         step: 'Step 3',
@@ -315,19 +315,19 @@ export const en: Translations = {
     items: [
       {
         tag: 'Guides',
-        title: 'Palworld Hacks Creative Practice: Aim Drills Before Ranked',
+        title: 'Palworld Aim Practice Before Co-op Raids',
         slug: 'palworld-cheat-codes-guide',
         image: '/images/blog/palworld-cheat-codes-guide.png',
-        desc: 'Use Creative and bot lobbies to practice aimbot smoothness, ESP ranges and loadouts before Ranked.',
+        desc: 'Use private worlds to practice aimbot smoothness, ESP ranges and loadouts before co-op.',
         date: 'Aug 20, 2026',
         readTime: '10 min read',
       },
       {
         tag: 'Guides',
-        title: 'Palworld Hacks Creative Tips for Aimbot and ESP',
+        title: 'Palworld Tips for Aimbot and ESP in Private Worlds',
         slug: 'palworld-console-cheats-tips',
         image: '/images/blog/palworld-console-cheats-tips.png',
-        desc: 'Creative and bot-lobby workflows to tune aimbot, ESP wallhack and loot ESP before Ranked.',
+        desc: 'Private world workflows to tune aimbot, ESP wallhack and loot ESP before co-op.',
         date: 'Aug 19, 2026',
         readTime: '6 min read',
       },
@@ -336,7 +336,7 @@ export const en: Translations = {
         title: 'How to practice Palworld hacks safely',
         slug: 'how-to-use-palworld-cheat-codes',
         image: '/images/blog/how-to-use-palworld-cheat-codes.png',
-        desc: 'Creative vs Ranked: how to test aimbot and ESP in practice islands before using private Palworld hacks.',
+        desc: 'Private vs online co-op: how to test aimbot and ESP safely before using Palworld hacks on live servers.',
         date: 'Aug 18, 2026',
         readTime: '7 min read',
       },
@@ -351,10 +351,10 @@ export const en: Translations = {
       },
       {
         tag: 'Guides',
-        title: 'Creative practice vs ranked Palworld hacks',
+        title: 'Private practice vs online Palworld hacks',
         slug: 'palworld-console-commands-cheats',
         image: '/images/blog/palworld-console-commands-cheats.png',
-        desc: 'How Creative islands differ from private aimbot and ESP tools used in Open World and Ranked.',
+        desc: 'How offline worlds differ from external aimbot and ESP tools used in Open World and co-op.',
         date: 'Aug 17, 2026',
         readTime: '8 min read',
       },
@@ -378,7 +378,7 @@ export const en: Translations = {
       },
       {
         tag: 'Setup',
-        title: 'Buy Palworld Aimbot Cheats for Ranked',
+        title: 'Buy Palworld Aimbot Cheats for Co-op',
         slug: 'palworld-aimbot-ranked-guide',
         image: '/images/blog/palworld-aimbot-ranked-guide.png',
         desc: 'Aimbot, Prediction and Hotkey macros configs for climbing ranked with Pro tier palworld hacks.',
@@ -387,7 +387,7 @@ export const en: Translations = {
       },
       {
         tag: 'Setup',
-        title: 'Palworld ESP Wallhack Cheat Setup for Ranked',
+        title: 'Palworld ESP Wallhack Setup for Co-op',
         slug: 'palworld-esp-wallhack-setup',
         image: '/images/blog/palworld-esp-wallhack-setup.png',
         desc: 'Enemy position tracking, chest ESP, smoke alerts and vision detector tuning for Lite and Elite tiers.',
@@ -426,7 +426,7 @@ export const en: Translations = {
         title: 'Palworld HWID Spoofer vs New Account After anti-cheat Ban',
         slug: 'palworld-hwid-spoofer-after-ban',
         image: '/images/blog/palworld-hwid-spoofer-after-ban.png',
-        desc: 'When to spoof hardware, when to start fresh, and how localhost:4321/products/palworld-hacks fits each path.',
+        desc: 'When to spoof hardware, when to start fresh, and how getpalworldhack.net/products/palworld-hacks fits each path.',
         date: 'Aug 13, 2026',
         readTime: '7 min read',
       },
@@ -444,7 +444,7 @@ export const en: Translations = {
         title: 'Palworld Aimbot Cheat Guide: AR, SMG and Shotgun',
         slug: 'palworld-aimbot-combat-guide',
         image: '/images/blog/palworld-aimbot-combat-guide.png',
-        desc: 'Per-weapon aimbot profiles for Pro tier—AR spray, SMG tracking and shotgun push settings for Ranked.',
+        desc: 'Per-weapon aimbot profiles for Pro tier—rifle spray, shotgun bursts and Pal weak-spot settings for co-op.',
         date: 'Aug 12, 2026',
         readTime: '6 min read',
       },
@@ -487,7 +487,7 @@ export const en: Translations = {
       { num: '03', label: 'Radar', title: 'Loot and rotates on lock', desc: 'Enemy dots, loot timers and mini-radar on a compact overlay.' },
       { num: '04', label: 'Weapons', title: 'Per-weapon aimbot profiles', desc: 'Save AR, SMG, shotgun and sniper presets and swap with hotkeys.' },
       { num: '05', label: 'Loot', title: 'Chest ESP & loot assist', desc: 'Chest highlights, rare drops and Elite loot-assist pathing.' },
-      { num: '06', label: 'Profiles', title: 'Configs for every mode', desc: 'Open World, Co-op, Ranked and Creative presets with cloud backup.' },
+      { num: '06', label: 'Profiles', title: 'Configs for every mode', desc: 'Open World, co-op and private server presets with cloud backup.' },
     ],
   },
   workflow: {
@@ -505,7 +505,7 @@ export const en: Translations = {
         num: '01',
         phase: 'Before purchase',
         title: 'Check status',
-        desc: 'Read the live banner on localhost:4321 before you buy or launch.',
+        desc: 'Read the live banner on getpalworldhack.net before you buy or launch.',
       },
       {
         num: '02',
@@ -517,7 +517,7 @@ export const en: Translations = {
         num: '03',
         phase: 'Loader',
         title: 'Launch and set up',
-        desc: 'Download from the portal, turn on modules, and test in Creative or a bot lobby.',
+        desc: 'Download from the portal, turn on modules, and test in a private world first.',
       },
       {
         num: '04',
@@ -531,7 +531,7 @@ export const en: Translations = {
     eyebrow: 'Notes',
     title: 'Quick tips',
     items: [
-      { num: '01', title: 'After patches', desc: 'Check Discord and the portal status before you queue Ranked after a Palworld update.' },
+      { num: '01', title: 'After patches', desc: 'Check Discord and the portal status before you queue co-op after a Palworld 1.0.x update.' },
       { num: '02', title: 'Start slow', desc: 'Use the default aimbot smoothness and ESP range first, then raise them if you need to.' },
       { num: '03', title: 'Discord help', desc: 'Stuck on the loader or configs? Ask in Discord and someone will walk you through it.' },
     ],
@@ -552,8 +552,8 @@ export const en: Translations = {
         icon: 'headphones',
         title: 'Email support',
         desc: 'Loader errors, HWID and account issues.',
-        linkLabel: 'support@localhost:4321',
-        href: 'mailto:support@localhost:4321',
+        linkLabel: 'support@getpalworldhack.net',
+        href: 'mailto:support@getpalworldhack.net',
       },
       {
         icon: 'navFaq',
@@ -572,7 +572,7 @@ export const en: Translations = {
     ],
     ticketTitle: 'Include in your ticket',
     ticketItems: [
-      { title: 'Order email', desc: 'The email you used at checkout on localhost:4321.' },
+      { title: 'Order email', desc: 'The email you used at checkout on getpalworldhack.net.' },
       { title: 'Platform', desc: 'Windows 10 or 11, Steam / Game Pass, and your Palworld version.' },
       { title: 'Error detail', desc: 'Screenshot or exact text from the loader or Steam Games.' },
     ],
@@ -585,7 +585,7 @@ export const en: Translations = {
       {
         num: '01',
         q: 'Where do I check if Palworld hacks are online?',
-        a: 'The live status banner is on localhost:4321 and in the Discord #status channel. Always check after a Palworld or anti-cheat update.',
+        a: 'The live status banner is on getpalworldhack.net and in the Discord #status channel. Always check after a Palworld or anti-cheat update.',
       },
       {
         num: '02',
@@ -610,7 +610,7 @@ export const en: Translations = {
       {
         num: '06',
         q: 'Where are products and utilities listed?',
-        a: 'Cheat tiers, HWID Spoofer, UGC and Skin Changer live at localhost:4321/products/palworld-hacks with feature lists and checkout via our partner.',
+        a: 'Cheat tiers, HWID Spoofer, UGC and Skin Changer live at getpalworldhack.net/products/palworld-hacks with feature lists and checkout via our partner.',
       },
     ],
   },
@@ -634,7 +634,7 @@ export const en: Translations = {
     about: {
       title: 'About Palworld Hacks | Buy PC Aimbot & ESP',
       description:
-        'About Palworld Hacks — buy PC Palworld hacks (aimbot, ESP, wallhack), utilities and guides at localhost:4321.',
+        'About Palworld Hacks — buy PC Palworld hacks (aimbot, ESP, wallhack), utilities and guides at getpalworldhack.net.',
       sections: [
         {
           heading: 'Who we are',
@@ -661,12 +661,12 @@ export const en: Translations = {
     privacy: {
       title: 'Privacy Policy | Palworld Hacks Shop',
       description:
-        'How the Palworld hacks shop at localhost:4321 handles analytics, cookies and contact data.',
+        'How the Palworld hacks shop at getpalworldhack.net handles analytics, cookies and contact data.',
       sections: [
         {
           heading: 'Information we collect',
           paragraphs: [
-            'We may collect basic analytics such as page views, device type, browser and approximate region through Google Analytics when it is enabled. Checkout runs on external pages. We do not store payment card data on localhost:4321.',
+            'We may collect basic analytics such as page views, device type, browser and approximate region through Google Analytics when it is enabled. Checkout runs on external pages. We do not store payment card data on getpalworldhack.net.',
           ],
         },
         {
@@ -692,12 +692,12 @@ export const en: Translations = {
     terms: {
       title: 'Terms for Palworld Hacks | License & Refunds',
       description:
-        'Terms for buying Palworld hacks on localhost:4321 — license use, delivery, refunds and account risk.',
+        'Terms for buying Palworld hacks on getpalworldhack.net — license use, delivery, refunds and account risk.',
       sections: [
         {
           heading: 'Agreement',
           paragraphs: [
-            'Last updated: September 2026. By using localhost:4321 or buying a product listed here, you agree to these Terms & Conditions and our Privacy Policy.',
+            'Last updated: September 2026. By using getpalworldhack.net or buying a product listed here, you agree to these Terms & Conditions and our Privacy Policy.',
           ],
         },
         {
@@ -710,7 +710,7 @@ export const en: Translations = {
         {
           heading: 'Checkout and delivery',
           paragraphs: [
-            'Payment and license delivery run on external checkout pages. localhost:4321 does not process or store payment card numbers.',
+            'Payment and license delivery run on external checkout pages. getpalworldhack.net does not process or store payment card numbers.',
             'After purchase, use the operator portal linked from your order flow to download the current loader and setup guide before launching Palworld.',
           ],
         },
@@ -752,7 +752,7 @@ export const en: Translations = {
     support: {
       title: 'Palworld Hacks Support | Loader, HWID & Checkout',
       description:
-        'Palworld hacks support for loader setup, HWID spoofing and checkout help at localhost:4321.',
+        'Palworld hacks support for loader setup, HWID spoofing and checkout help at getpalworldhack.net.',
     },
   },
   ui: {

@@ -67,11 +67,22 @@ export function pageTitle(keyword: string, brand = t.site.name): string {
   return `${trimmed}${suffix}`;
 }
 
+/** Trim to SERP-friendly 140–158 chars without mid-word cuts. */
+export function fitMetaDescription(text: string, min = 140, max = 158): string {
+  const trimmed = text.trim().replace(/\s+/g, ' ');
+  if (trimmed.length >= min && trimmed.length <= max) return trimmed;
+  if (trimmed.length <= max) return trimmed;
+  const slice = trimmed.slice(0, max + 1);
+  const lastSpace = slice.lastIndexOf(' ');
+  const cut = lastSpace >= min ? slice.slice(0, lastSpace) : trimmed.slice(0, max);
+  return cut.replace(/[,;:\-–—\s]+$/, '').trim();
+}
+
 /** Keep meta descriptions blunt about Palworld hacks for SERP snippets. */
 export function cheatMetaDescription(text: string): string {
   const trimmed = text.trim();
-  if (/palworld\s*cheat/i.test(trimmed)) return trimmed;
-  return `Palworld hacks guide: ${trimmed}`;
+  const base = /palworld\s*cheat/i.test(trimmed) ? trimmed : `Palworld hacks guide: ${trimmed}`;
+  return fitMetaDescription(`${base} Updated for Palworld 1.0.5.`);
 }
 
 export const DEFAULT_OG_IMAGE_WIDTH = 1200;

@@ -16,6 +16,10 @@ export default defineConfig({
     '/products/dota-2-cheats/elite/': '/products/palworld-hacks/elite/',
     '/products/dota-2-cheats/utilities/': '/products/palworld-hacks/utilities/',
     '/contact/': '/support/',
+    '/forum/how-to-choose-palworld-2-product-tier/': '/forum/how-to-choose-palworld-product-tier/',
+    '/forum/how-to-enable-the-palworld-2-console/': '/forum/how-to-enable-the-palworld-console/',
+    '/forum/what-to-check-after-a-palworld-2-patch/': '/forum/what-to-check-after-a-palworld-patch/',
+    '/forum/palworld-2-lite-or-pro-hero-scripts/': '/forum/palworld-lite-or-pro-hero-scripts/',
   },
   compressHTML: true,
   prefetch: {

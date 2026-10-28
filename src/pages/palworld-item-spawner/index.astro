@@ -1,27 +1,44 @@
 ---
 import SeoGuideLayout from '../../layouts/SeoGuideLayout.astro';
 import { SEO_INTROS } from '../../data/seo-intros';
+import SeoDataTable from '../../components/SeoDataTable.astro';
+import { palworldItemIds } from '../../data/palworld-item-ids';
+import { itemListSchema } from '../../utils/schema';
 ---
 
 <SeoGuideLayout
   pathname="/palworld-item-spawner/"
   breadcrumbLabel="Item spawner"
   intro={SEO_INTROS['/palworld-item-spawner/']!}
+  jsonLd={itemListSchema(
+    palworldItemIds.map((row) => ({
+      name: row.name,
+      url: '/palworld-item-spawner/',
+    })),
+  )}
 >
-  <h2>Palworld item spawner tools</h2>
+  <h2>Palworld item IDs for spawners and GiveItem</h2>
   <p>
-    Trainers expose searchable item lists; mod menus filter by category. For server admins, Palworld spawn item
-    commands remain the most portable approach when joining friends who disallow client-side spawners.
+    Trainers, mod menus and admin consoles all reference the same Palworld item IDs. Use this list with{' '}
+    <code>GiveItem {`{ItemID}`} {`{Count}`}</code> on a dedicated server or with your Palworld item spawner module
+    offline. IDs can shift after Pocketpair balance patches — verify on 1.0.5 before sharing a table publicly.
   </p>
-  <h2>Palworld item list highlights</h2>
-  <ul>
-    <li>Spheres, weapons and armor tiers for PvP tests</li>
-    <li>Lifmunk Effigy and stat fruit for breeding labs</li>
-    <li>Jetragon and endgame Pal eggs for sandbox worlds</li>
-  </ul>
-  <h2>Palworld spawn item command tips</h2>
+  <SeoDataTable
+    caption="Common Palworld spawn IDs — expand with game data exports for full coverage"
+    columns={[
+      { key: 'name', label: 'Item / Pal' },
+      { key: 'itemId', label: 'Item ID' },
+      { key: 'category', label: 'Category' },
+    ]}
+    rows={palworldItemIds}
+  />
+  <h2>Palworld spawn item command examples</h2>
+  <pre class="not-prose overflow-x-auto rounded-lg border border-border bg-muted/20 p-4 text-sm"><code>{`GiveItem PalSphere_Mega 50
+GiveItem AssaultRifle_Default1 1
+GiveItem Cake 10
+GivePal JetDragon 1`}</code></pre>
   <p>
-    Cross-check IDs after each Pocketpair balance pass—duplicate names exist across tech tiers. Export your table
-    when 1.0.6 drops so you can diff changes quickly.
+    Pair spawning with our <a href="/palworld-console-commands/">console commands</a> guide and{' '}
+    <a href="/how-to-install/">install checklist</a> so Steam cloud saves stay intact.
   </p>
 </SeoGuideLayout>

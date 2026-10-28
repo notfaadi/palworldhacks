@@ -46,15 +46,19 @@ const heroMarqueePills = [
         </p>
 
         <div class="flex flex-wrap justify-start gap-3 sm:gap-4">
+          <Button as="a" href="/download/" variant="primary" size="lg" class="rounded-xl">
+            {h.ctaPrimary}
+            <Icon name="arrowRight" size={18} />
+          </Button>
           <Button
             as="a"
             href={ROUTES.products}
             data-scroll-target="products"
-            variant="primary"
+            variant="secondary"
             size="lg"
             class="rounded-xl"
           >
-            {h.ctaPrimary}
+            Shop Elite
             <Icon name="arrowRight" size={18} />
           </Button>
           <Button

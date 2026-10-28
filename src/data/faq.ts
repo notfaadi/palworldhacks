@@ -45,7 +45,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'setup',
     icon: 'faqStatus',
     q: 'Where do I check if Palworld hacks are online?',
-    a: a('The live status banner is on localhost:4321 and in the Discord #status channel. Always check after a Palworld or anti-cheat update.'),
+    a: a('The live status banner is on getpalworldhack.net and in the Discord #status channel. Always check after a Palworld or anti-cheat update.'),
   },
   {
     id: 'after-buy',
@@ -214,7 +214,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhoPro',
     q: 'Who should buy Pro?',
-    a: `Ranked players who want Aimbot, Smooth Aim and Hotkey macros with ESP wallhack included. Pro is the most popular tier at localhost:4321.`,
+    a: `Ranked players who want Aimbot, Smooth Aim and Hotkey macros with ESP wallhack included. Pro is the most popular tier at getpalworldhack.net.`,
     scopes: ['pro'],
   },
   {
@@ -230,7 +230,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'safety',
     icon: 'faqEacUpdate',
     q: 'What should I do after a anti-cheat update?',
-    a: a('Check localhost:4321 status and Discord #status. Do not launch until the banner shows online. Load conservative presets after any patch.'),
+    a: a('Check getpalworldhack.net status and Discord #status. Do not launch until the banner shows online. Load conservative presets after any patch.'),
   },
   {
     id: 'discord-help',
@@ -352,8 +352,8 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       id: 'blog-guide-start',
       topic: 'blog',
       icon: 'faqBlogGuideStart',
-      q: 'Should I use console cheat codes in ranked?',
-      a: a('No. Creative lobby cheat codes only work in custom games with cheats enabled. Ranked requires separate palworld hacks from localhost:4321 tiers.'),
+      q: 'Should I use console cheat codes in co-op?',
+      a: a('No. Creative lobby cheat codes only work in custom games with cheats enabled. Ranked requires separate palworld hacks from getpalworldhack.net tiers.'),
     },
     {
       id: 'blog-guide-tier',
@@ -383,7 +383,7 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       topic: 'blog',
       icon: 'faqBlogSetupLobby',
       q: 'Should I test in a lobby first?',
-      a: a('Yes. Load conservative presets in a lobby or Co-op before ranked. Tune script delay and ESP distance caps over several sessions.'),
+      a: a('Yes. Load conservative presets in a lobby or Co-op before co-op. Tune script delay and ESP distance caps over several sessions.'),
     },
   ],
   Security: [
