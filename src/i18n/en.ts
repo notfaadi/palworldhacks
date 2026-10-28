@@ -27,7 +27,7 @@ export const en: Translations = {
     titleLine2: 'Free Trainers, Mod Menu and Console Commands',
     subtitle:
       'Palworld hacks for Steam and Xbox Game Pass PC on Pocketpair 1.0.5 — free trainers, god mode, item IDs and mod menus. Updated after every 1.0.x patch, no survey.',
-    ctaPrimary: 'Free download',
+    ctaPrimary: 'Buy cheats',
     ctaCloudDma: 'Buy Cloud DMA',
     modesLabel: 'Modes',
     modes: ['Open World', 'Co-op', 'PvP Bases', 'Private Server'],

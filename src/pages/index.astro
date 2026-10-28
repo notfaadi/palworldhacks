@@ -10,7 +10,6 @@ import { resolvePageSeo } from '../config/seo';
 import { organizationSchema, softwareApplicationHomeSchema, websiteSchema } from '../utils/schema';
 import { webpSrc } from '../utils/responsiveImage';
 import SeoHubLinks from '../components/SeoHubLinks.astro';
-import SeoTrustStrip from '../components/SeoTrustStrip.astro';
 
 const seo = resolvePageSeo('/');
 const heroLcpImage = webpSrc('/images/gameplay/palworld-esp-wallhack.png', 512);
@@ -33,7 +32,6 @@ const heroLcpImage = webpSrc('/images/gameplay/palworld-esp-wallhack.png', 512);
     fetchpriority="high"
   />
   <HeroSection />
-  <SeoTrustStrip />
   <FeaturesSection />
   <ProductsSection />
   <WhySetupSection />
