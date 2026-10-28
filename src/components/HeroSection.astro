@@ -1,5 +1,6 @@
 ---
 import { t } from '../i18n';
+import { checkoutPath } from '../config/checkout';
 import { ROUTES } from '../utils/path';
 import { heroSlides } from '../data/products';
 import { compatibilityIcons, heroStatIcons, heroStatusPills } from '../data/sectionIcons';
@@ -58,13 +59,13 @@ const heroMarqueePills = [
           </Button>
           <Button
             as="a"
-            href={t.site.discord}
+            href={checkoutPath('cloudDma')}
             variant="secondary"
             size="lg"
             class="rounded-xl"
           >
-            <Icon name="messageCircle" size={18} />
-            {h.ctaDiscord}
+            {h.ctaCloudDma}
+            <Icon name="arrowRight" size={18} />
           </Button>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import type { BlogPostFull } from './types';
+import { supplementalBlogPosts } from './posts-supplemental';
 
 export const blogPosts: BlogPostFull[] = [
   {
@@ -899,4 +900,5 @@ export const blogPosts: BlogPostFull[] = [
       { type: 'p', text: "Stream-proof mode, external loader architecture, and cloud config sync distinguish localhost:4321 from free paste tools that vanish after anti-cheat waves. Private maintenance every patch beats feature bullet lists from unknown forums." },
     ],
   },
+  ...supplementalBlogPosts,
 ];

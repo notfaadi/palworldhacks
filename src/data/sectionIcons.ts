@@ -5,6 +5,7 @@ export const featureIcons: Record<string, IconName> = {
   'ESP Wallhack / ESP': 'featureEsp',
   'Radar & Loot': 'featureRadar',
   'Aimbot': 'featureAimbot',
+  'Cloud DMA': 'dmaHardware',
   'Utility Suite': 'featureUtilitySuite',
   'Loot Assist': 'compareAutoFarm',
   'Stream Proof': 'streamProof',

@@ -7,8 +7,8 @@ import { Badge } from '@/components/starwind/badge';
 
 const s = t.features;
 
-function isScriptsHero(title: string) {
-  return title === 'Scripts';
+function isFeatureHeroCard(title: string) {
+  return title === 'Cloud DMA' || title === 'Scripts';
 }
 ---
 
@@ -21,7 +21,7 @@ function isScriptsHero(title: string) {
     >
       {
         s.items.map((item) => {
-          const aimbotHero = isScriptsHero(item.title);
+          const aimbotHero = isFeatureHeroCard(item.title);
           return (
             <article
               class:list={[

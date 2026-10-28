@@ -28,7 +28,7 @@ export const en: Translations = {
     subtitle:
       'Buy Palworld hacks for PC — aimbot, ESP, wallhack, radar and loot ESP for Open World, Co-op and Ranked. Updated after every anti-cheat patch.',
     ctaPrimary: 'Buy cheats',
-    ctaDiscord: 'Join Discord',
+    ctaCloudDma: 'Buy Cloud DMA',
     modesLabel: 'Modes',
     modes: ['Open World', 'Co-op', 'Ranked', 'Creative'],
     metrics: [
@@ -41,20 +41,21 @@ export const en: Translations = {
   features: {
     eyebrow: 'Cheat features',
     title: 'Palworld cheat modules',
-    subtitle: 'Aimbot, ESP, wallhack, radar and loot ESP — every module you need to dominate Palworld on PC.',
+    subtitle:
+      'Cloud DMA infrastructure plus ESP, wallhack, radar and loot tools — everything you need for Palworld on PC.',
     items: [
       {
-        title: 'Aimbot',
-        subtitle: 'Smooth aim, per weapon',
-        desc: 'Aimbot for Open World and Co-op. Set smoothness, FOV, bone priority and separate profiles for ARs, SMGs, shotguns and snipers.',
+        title: 'Cloud DMA',
+        subtitle: 'Hardware + cloud relay',
+        desc: 'Cloud DMA keeps game reads on dedicated hardware with a hosted relay so your main Palworld PC stays clean. Required stack for full Levo Palworld functionality.',
         bullets: [
-          'Smoothness and FOV sliders',
-          'Bone priority: head, chest or closest',
-          'Profiles for AR, SMG, shotgun and sniper',
-          'Prediction on moving targets',
-          'Presets for Ranked, Co-op and Creative',
+          'DMA compatibility scan in the operator portal',
+          'Palworld memory profile and firmware sync',
+          'Second-PC networking and verification guide',
+          'Pairs with ESP, aimbot and external loader',
+          'Lifetime access with patch-day firmware notices',
         ],
-        tags: ['palworld aimbot', 'smoothness', 'bone priority'],
+        tags: ['cloud dma', 'hardware dma', 'palworld'],
         bento: 'sm:col-span-2 lg:col-span-12 lg:col-start-1 lg:row-start-1',
       },
       {
@@ -299,7 +300,7 @@ export const en: Translations = {
   blog: {
     eyebrow: 'Cheat guides',
     title: 'Palworld cheat guides',
-    subtitle: 'Aimbot setup, ESP wallhack config, Creative practice tips and anti-cheat patch-day checks.',
+    subtitle: 'Palworld feature modules, patch-day updates, troubleshooting fixes, and setup guides.',
     latestTitle: 'Latest cheat guides',
     latestSubtitle: 'Filter by topic or sort to find aimbot, ESP, wallhack and patch-day cheat guides.',
     filterAll: 'All articles',

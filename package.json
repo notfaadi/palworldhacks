@@ -13,7 +13,8 @@
     "deploy": "wrangler deploy",
     "astro": "astro",
     "optimize:images": "node scripts/optimize-images.mjs",
-    "fetch:gameplay": "node scripts/fetch-palworld-gameplay.mjs"
+    "fetch:gameplay": "node scripts/fetch-palworld-gameplay.mjs",
+    "fetch:blog-images": "node scripts/fetch-blog-category-images.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
