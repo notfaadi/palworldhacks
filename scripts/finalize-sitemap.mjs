@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { resolveDistDir } from './dist-dir.mjs';
 
-const SITE = 'https://localhost:4321';
+const SITE = (process.env.PUBLIC_SITE_URL ?? 'https://getpalworldhack.net').replace(/\/$/, '');
 const dist = resolveDistDir();
 
 function loadUrlsetXml(dir) {
@@ -66,8 +66,10 @@ function normalizeUrl(loc) {
   } catch {
     return null;
   }
-  if (url.protocol !== 'https:') url.protocol = 'https:';
-  url.hostname = 'localhost:4321';
+  const origin = new URL(`${SITE}/`);
+  url.protocol = origin.protocol;
+  url.hostname = origin.hostname;
+  url.port = origin.port;
   url.hash = '';
   url.search = '';
   let pathname = url.pathname;

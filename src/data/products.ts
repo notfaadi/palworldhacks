@@ -60,7 +60,7 @@ export interface ProductPage {
 export const productRelatedBlogSlugs: Record<string, string[]> = {
   lite: ['palworld-esp-wallhack-setup', 'palworld-lite-vs-pro', 'palworld-radar-hack-guide', 'eac-patch-day-checklist'],
   pro: [
-    'palworld-aimbot-ranked-guide',
+    'palworld-aimbot-co-op-guide',
     'palworld-aimbot-combat-guide',
     'palworld-lite-vs-pro',
     'palworld-stream-proof-setup',
@@ -117,7 +117,7 @@ const defaultAcquisitionSteps: AcquisitionStep[] = [
   {
     num: '04',
     title: 'Follow guided setup',
-    desc: 'Use only the operator portal, patch loader, and setup guide. Test in a lobby, load presets, then queue ranked or Co-op.',
+    desc: 'Use only the operator portal, patch loader, and setup guide. Test in a lobby, load presets, then queue co-op or Co-op.',
   },
 ];
 
@@ -243,6 +243,48 @@ const galleryRaw = {
     caption: 'Combat ESP',
     captionDesc: 'ESP and aimbot overlay in an open-field fight.',
   },
+  gpHomeModMenu: {
+    src: `${gameplay}/palworld-home-mod-menu-inventory.png`,
+    alt: 'Palworld mod menu overlay on the character inventory screen on PC',
+    caption: 'Mod menu',
+    captionDesc: 'Trainer mod menu with stats, toggles and item tools.',
+  },
+  gpHomeInstaCraft: {
+    src: `${gameplay}/palworld-home-insta-craft.png`,
+    alt: 'Palworld instant craft trainer enabled at the workbench on PC',
+    caption: 'Instant craft',
+    captionDesc: 'Speed crafting and workbench automation.',
+  },
+  gpHomeOpenWorld: {
+    src: `${gameplay}/palworld-home-open-world.png`,
+    alt: 'Palworld open world gameplay with Pal sphere capture on PC',
+    caption: 'Open world',
+    captionDesc: 'Capture and exploration with trainer support.',
+  },
+  gpHomeMagnet: {
+    src: `${gameplay}/palworld-home-magnet-loot.png`,
+    alt: 'Palworld loot magnet cheat pulling items in the open world on PC',
+    caption: 'Loot magnet',
+    captionDesc: 'Magnet loot and resource collection.',
+  },
+  gpHomeSpheres: {
+    src: `${gameplay}/palworld-home-legendary-spheres.png`,
+    alt: 'Palworld mod menu with legendary sphere spawner and launcher on PC',
+    caption: 'Item spawner',
+    captionDesc: 'Legendary spheres and spawn tools.',
+  },
+  gpHomeBoss: {
+    src: `${gameplay}/palworld-home-boss-katress.png`,
+    alt: 'Palworld boss fight against Katress with cheat overlay on PC',
+    caption: 'Boss fights',
+    captionDesc: 'Tower boss encounters with god mode and ESP.',
+  },
+  gpHomeFirstKill: {
+    src: `${gameplay}/palworld-home-boss-first-kill.png`,
+    alt: 'Palworld boss first kill reward screen after using cheats on PC',
+    caption: 'Boss rewards',
+    captionDesc: 'Ancient Technology Points and first-clear drops.',
+  },
 };
 
 function slide(...keys: GalleryKey[]): ProductSlide[] {
@@ -268,7 +310,7 @@ const tierAbout: Record<string, ProductPage['about']> = {
       type: 'p',
       text: 'Palworld Lite is built for players who want map awareness first. in co-op, knowing enemy positions, chest locations and loot timings wins more fights than raw mechanics—Lite gives you that edge without aimbot automation.',
     },
-    { type: 'h2', text: 'Ranked-safe by design' },
+    { type: 'h2', text: 'co-op-safe by design' },
     {
       type: 'p',
       text: 'Lite skips Aimbot and bot modules entirely. Your gameplay looks natural while ESP, radar hack and loot timers keep you informed. Stream-proof mode hides overlays from OBS capture for content creators.',
@@ -277,7 +319,7 @@ const tierAbout: Record<string, ProductPage['about']> = {
   pro: [
     {
       type: 'p',
-      text: 'Palworld Pro is the sweet spot for ranked grinders. Aimbot, Smooth Aim and Sticky Aim help you win squad fights without obvious bot patterns—when you tune Smoothness sliders using our portal presets.',
+      text: 'Palworld Pro is the sweet spot for co-op grinders. Aimbot, Smooth Aim and Sticky Aim help you win squad fights without obvious bot patterns—when you tune Smoothness sliders using our portal presets.',
     },
     { type: 'h2', text: 'Aimbot + awareness combined' },
     {
@@ -293,7 +335,7 @@ const tierAbout: Record<string, ProductPage['about']> = {
     { type: 'h2', text: 'Use Elite responsibly' },
     {
       type: 'p',
-      text: 'Elite power demands disciplined profiles. Test in lobbies, start with portal conservative presets, and scale up over days—not minutes. Staff in Discord help Elite users tune before their first ranked queue.',
+      text: 'Elite power demands disciplined profiles. Test in lobbies, start with portal conservative presets, and scale up over days—not minutes. Staff in Discord help Elite users tune before their first co-op queue.',
     },
   ],
 };
@@ -320,7 +362,7 @@ const tierBodies: Record<string, ProductPage['body']> = {
     { type: 'h2', text: 'Recommended pairing' },
     {
       type: 'p',
-      text: 'Pro is the most popular tier at getpalworldhack.net—enough firepower for high-rank lobbies without Elite slot limits. Pair with our aimbot guide in the blog before your first ranked session.',
+      text: 'Pro is the most popular tier at getpalworldhack.net—enough firepower for high-rank lobbies without Elite slot limits. Pair with our aimbot guide in the blog before your first co-op session.',
     },
   ],
   elite: [
@@ -409,7 +451,7 @@ const productContent: Record<
       'Loot spawn timers',
       'Radar hack',
       'Co-op preset config',
-      'Ranked preset config',
+      'co-op preset config',
       'Cloud config backup',
       'Patch auto-updater',
     ],
@@ -437,7 +479,7 @@ const productContent: Record<
       'FOV & smoothness tuning',
       'Per-weapon aimbot profiles',
       'Third-party alert integration',
-      'Ranked-safe default presets',
+      'co-op-safe default presets',
       'Lobby test profile',
       'Cloud config backup',
       'Patch auto-updater',
@@ -699,12 +741,13 @@ export function getAllCheatSlugs() {
 const cheatsHubSlides = slide('gpAimLock', 'gpThermal', 'gpArena');
 
 export const heroSlides = slide(
-  'gpMapHack',
-  'gpScripts',
-  'gpHeroEsp',
-  'gpAutoKill',
-  'gpFarmBot',
-  'gpCombat',
+  'gpHomeModMenu',
+  'gpHomeInstaCraft',
+  'gpHomeOpenWorld',
+  'gpHomeMagnet',
+  'gpHomeSpheres',
+  'gpHomeBoss',
+  'gpHomeFirstKill',
 );
 
 export const productHub = {

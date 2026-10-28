@@ -1,10 +1,17 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import { sitemapSerialize } from './src/config/sitemap.ts';
 
+const site = process.env.PUBLIC_SITE_URL ?? 'https://getpalworldhack.net';
+
 export default defineConfig({
-  site: 'https://getpalworldhack.net',
+  site,
+  env: {
+    schema: {
+      PUBLIC_SITE_URL: envField.string({ context: 'client', access: 'public', optional: true }),
+    },
+  },
   trailingSlash: 'always',
   redirects: {
     '/cheats/': '/products/palworld-hacks/',

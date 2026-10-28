@@ -117,6 +117,35 @@ html::-webkit-scrollbar,
   padding-bottom: 4.5rem;
 }
 
+#hero .hero-title {
+  margin: 0;
+  font-family: var(--font-heading, ui-sans-serif, system-ui, sans-serif);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+#hero .hero-title__line1 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--foreground);
+}
+
+#hero .hero-title__line2 {
+  margin-top: 0.35rem;
+  font-size: clamp(1.375rem, 3.2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  color: var(--primary);
+}
+
+@media (min-width: 1024px) {
+  #hero .hero-title__line2 {
+    margin-top: 0.5rem;
+  }
+}
+
 #hero .hero-bg-dim {
   background:
     radial-gradient(ellipse 80% 55% at 50% 0%, rgba(45, 110, 226, 0.18), transparent 65%),

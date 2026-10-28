@@ -1,0 +1,15 @@
+---
+import { IS_LOCAL_DEV, PRODUCTION_DOMAIN, SITE_URL } from '../config/site';
+---
+
+{
+  IS_LOCAL_DEV && (
+    <div
+      class="fixed bottom-0 left-0 right-0 z-[100] border-t border-amber-500/40 bg-amber-500/10 px-3 py-2 text-center text-xs text-amber-900 dark:text-amber-100"
+      role="status"
+    >
+      Local preview — canonical origin <strong>{SITE_URL}</strong>. Production deploy uses{' '}
+      <strong>{PRODUCTION_DOMAIN}</strong>.
+    </div>
+  )
+}

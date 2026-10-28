@@ -84,7 +84,7 @@ const additionalGuidePosts: ForumPost[] = [
   guideDiscussion({
     slug: 'how-to-tune-script-delay-settings', title: 'How do delay settings affect player aimbot?', upvotes: 32,
     excerpt: 'A practical question about timing, combo readability, and why the aimbot guide recommends conservative tuning.',
-    category: 'Guides & Builds', categoryTone: 'blue', sourceTitle: 'Palworld aimbot for ranked play', sourcePath: '/blog/palworld-aimbot-ranked-guide/',
+    category: 'Guides & Builds', categoryTone: 'blue', sourceTitle: 'Palworld aimbot for co-op play', sourcePath: '/blog/palworld-aimbot-co-op-guide/',
     answer: 'Delay settings control the spacing between automated actions. The guide recommends starting with slower timings and testing them in a practice setting before making changes.',
     detail: 'A consistent sequence is easier to review and tune than changing several timing values at once.',
     tip: 'Keep a note of each configuration you try so you can return to the last setup that behaved as expected.',
@@ -173,16 +173,16 @@ const additionalGuidePosts: ForumPost[] = [
 
 export const forumPosts: ForumPost[] = [
   {
-    slug: 'can-custom-lobby-cheat-codes-be-used-in-ranked', category: 'General', categoryTone: 'purple',
+    slug: 'can-custom-lobby-cheat-codes-be-used-in-co-op', category: 'General', categoryTone: 'purple',
     title: 'Can I use Palworld cheat codes in online co-op with anti-cheat?',
     excerpt: 'Quick answer from the practice lobby guide: built-in lobby commands only work in custom matches with cheats enabled.',
     author: 'guide_team', age: '2 hours ago', commentsCount: 3, upvotes: 128, flair: 'Guide Q&A',
     sourceTitle: 'Palworld cheat codes guide: console commands for practice lobbies', sourcePath: '/blog/palworld-cheat-codes-guide/',
-    body: ['No. Private Palworld worlds and bot lobbies are for practice only. They do not carry into online co-op with anti-cheat or Co-op.', 'Use Creative to learn aimbot smoothness, ESP ranges, and loadouts. The guide also explains the difference between practice drills and third-party palworld hacks.'],
+    body: ['No. Private Palworld worlds and bot lobbies are for practice only. They do not carry into online co-op with anti-cheat or Co-op.', 'Use private world to learn aimbot smoothness, ESP ranges, and loadouts. The guide also explains the difference between practice drills and third-party palworld hacks.'],
     comments: [
-      { author: 'mid_or_feed', age: '1 hour ago', score: 24, body: 'Correct: load a Creative aim map or bot lobby before touching Ranked presets.' },
-      { author: 'ancient_archivist', age: '48 min. ago', score: 11, body: 'The guide covers AR, SMG, and shotgun drills. Keep Ranked presets conservative after practice.' },
-      { author: 'push_first', age: '35 min. ago', score: 8, body: 'Useful distinction. Creative practice tools are not ranked features.' },
+      { author: 'mid_or_feed', age: '1 hour ago', score: 24, body: 'Correct: load a private world aim map or bot lobby before touching co-op presets.' },
+      { author: 'ancient_archivist', age: '48 min. ago', score: 11, body: 'The guide covers AR, SMG, and shotgun drills. Keep co-op presets conservative after practice.' },
+      { author: 'push_first', age: '35 min. ago', score: 8, body: 'Useful distinction. private world practice tools are not co-op features.' },
     ],
   },
   {
@@ -202,8 +202,8 @@ export const forumPosts: ForumPost[] = [
     title: 'What is the safest way to practice high-ground spots?',
     excerpt: 'Use a private co-op world with ESP to study sight lines, then fight without staring at overlays.',
     author: 'guide_team', age: '6 hours ago', commentsCount: 2, upvotes: 64, flair: 'Guide Q&A',
-    sourceTitle: 'Palworld Creative tips for aimbot and ESP practice', sourcePath: '/blog/palworld-console-cheats-tips/',
-    body: ['Practice in a private co-op world. Enable ESP boxes briefly to inspect high-ground angles and chest positions, then fight with overlays minimized.', 'Repeat the same POI clear a few times so sight lines stick without waiting for a full Ranked match.'],
+    sourceTitle: 'Palworld private world tips for aimbot and ESP practice', sourcePath: '/blog/palworld-console-cheats-tips/',
+    body: ['Practice in a private co-op world. Enable ESP boxes briefly to inspect high-ground angles and chest positions, then fight with overlays minimized.', 'Repeat the same POI clear a few times so sight lines stick without waiting for a full co-op match.'],
     comments: [
       { author: 'stack_and_pull', age: '5 hours ago', score: 13, body: 'I peek with ESP on, then disable boxes and re-check the same angle. Helps for high-ground coverage.' },
       { author: 'map_reader', age: '4 hours ago', score: 6, body: 'Replaying the same POI path in a private world beats learning only in co-op.' },
@@ -233,15 +233,15 @@ export const forumPosts: ForumPost[] = [
     ],
   },
   {
-    slug: 'how-to-learn-weapon-aim-in-creative', category: 'Guides & Builds', categoryTone: 'blue',
+    slug: 'how-to-learn-weapon-aim-in-private world', category: 'Guides & Builds', categoryTone: 'blue',
     title: 'How can I practice weapon aim without waiting for a real match?',
-    excerpt: 'Create a Creative island or bot lobby and drill AR, SMG, and shotgun profiles with repeatable resets.',
+    excerpt: 'Create a private world island or bot lobby and drill AR, SMG, and shotgun profiles with repeatable resets.',
     author: 'guide_team', age: '1 day ago', commentsCount: 2, upvotes: 27, flair: 'Guide Q&A',
-    sourceTitle: 'Palworld Creative practice guide: aim drills before co-op', sourcePath: '/blog/palworld-cheat-codes-guide/',
-    body: ['Create a Creative island or bot lobby. Practice one weapon profile at a time—AR, SMG, then shotgun—and reset between attempts.', 'For realistic timing, use your Ranked smoothness values in a private world before enabling aimbot in live games. The linked guide covers the full practice workflow.'],
+    sourceTitle: 'Palworld private world practice guide: aim drills before co-op', sourcePath: '/blog/palworld-cheat-codes-guide/',
+    body: ['Create a private world island or bot lobby. Practice one weapon profile at a time—AR, SMG, then shotgun—and reset between attempts.', 'For realistic timing, use your co-op smoothness values in a private world before enabling aimbot in live games. The linked guide covers the full practice workflow.'],
     comments: [
       { author: 'mid_or_feed', age: '20 hours ago', score: 10, body: 'Start with a bot target and repeat the same spray until the tracking feels automatic.' },
-      { author: 'ancient_archivist', age: '18 hours ago', score: 5, body: 'Keep Ranked presets conservative—Creative can hide how snappy your aim looks in replays.' },
+      { author: 'ancient_archivist', age: '18 hours ago', score: 5, body: 'Keep co-op presets conservative—private world can hide how snappy your aim looks in replays.' },
     ],
   },
   ...additionalGuidePosts,

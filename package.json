@@ -14,9 +14,12 @@
     "astro": "astro",
     "optimize:images": "node scripts/optimize-images.mjs",
     "fetch:gameplay": "node scripts/fetch-palworld-gameplay.mjs",
+    "process:home-screenshots": "node scripts/process-homepage-screenshots.mjs",
     "fetch:blog-images": "node scripts/fetch-blog-category-images.mjs",
     "generate:og": "node scripts/generate-og-images.mjs",
-    "verify:seo": "node scripts/verify-seo.mjs"
+    "verify:seo": "node scripts/verify-seo-inventory.mjs",
+    "check:local": "node scripts/local-quality-check.mjs",
+    "build:local": "node scripts/build-local.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

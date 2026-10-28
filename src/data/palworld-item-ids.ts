@@ -1,3 +1,5 @@
+import { palworldItemIdsExtended } from './palworld-item-ids-extended';
+
 /** Representative Palworld item IDs for spawners and admin GiveItem (1.0.5 naming). */
 export interface ItemIdRow {
   name: string;
@@ -31,3 +33,5 @@ export const palworldItemIds: ItemIdRow[] = [
   { name: 'Anubis Pal', itemId: 'Anubis', category: 'Pal spawn' },
   { name: 'Frostallion Pal', itemId: 'IceHorse', category: 'Pal spawn' },
 ];
+
+export const allPalworldItemIds: ItemIdRow[] = [...palworldItemIds, ...palworldItemIdsExtended];

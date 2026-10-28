@@ -1,22 +1,34 @@
 ---
 import SeoGuideLayout from '../../layouts/SeoGuideLayout.astro';
 import { SEO_INTROS } from '../../data/seo-intros';
+import SeoDataTable from '../../components/SeoDataTable.astro';
+import { modMenuFeatures } from '../../data/palworld-mod-menu-features';
 ---
 
 <SeoGuideLayout pathname="/palworld-mod-menu/" breadcrumbLabel="Mod menu" intro={SEO_INTROS['/palworld-mod-menu/']!}>
-  <h2>Palworld ESP and wallhack overlays</h2>
+  <h2>Palworld mod menu features on patch 1.0.5</h2>
   <p>
-    ESP draws Pal boxes, player skeletons and loot through terrain—pair with radar for base raids. Keep opacity low
-    on stream if you record Pocketpair gameplay; “stream proof” depends on capture method, not marketing copy.
+    A Palworld mod menu bundles ESP, teleport, speed hacks and item spawning behind one overlay for Steam and Xbox
+    Game Pass PC. We document external menus with <strong>no DLL injection</strong> into Pocketpair’s executable — that
+    is the stated trust basis for “undetected” relative to internal hooks, not a ban-proof guarantee on live co-op.
   </p>
-  <h2>Teleport and Palworld speed hack toggles</h2>
+  <SeoDataTable
+    caption="Mod menu modules — test on private servers before official realms"
+    columns={[
+      { key: 'feature', label: 'Feature' },
+      { key: 'description', label: 'What it does' },
+      { key: 'risk', label: 'Risk notes' },
+    ]}
+    rows={modMenuFeatures}
+  />
+  <h2>Palworld ESP and teleport setup</h2>
   <p>
-    Teleport saves hours in tower climbs; speed hacks stress physics on co-op clients. Test on a dedicated server
-    you control before joining friends. External mod menus should not patch game binaries—overlay only.
+    Run borderless windowed on Windows 11, disable conflicting overlays, then enable Pal ESP before player ESP so you
+    can see boss phases. Teleport to tower landings only after saving — co-op guests may rubber-band if the host
+    teleports mid-fight.
   </p>
-  <h2>Undetected mod menus — no DLL injection</h2>
   <p>
-    Our listed Palworld mod menu workflow stays external with no DLL injection into the Pocketpair client. That
-    reduces classic signature hits but does not remove behavioral detection on official servers after 1.0.5.
+    Download the readme pack on <a href="/download/">download</a>, follow <a href="/how-to-install/">install steps</a>,
+    and read <a href="/faq/">FAQ</a> before enabling speed hacks on Game Pass PC.
   </p>
 </SeoGuideLayout>

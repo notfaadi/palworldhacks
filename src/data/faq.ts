@@ -118,7 +118,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqRankTiers',
     q: 'How do you rank Lite vs Pro vs Elite?',
-    a: `Map awareness only → ${lite}. Ranked gunfights with aimbot → ${pro}. Full bot suite and priority patches → ${elite}. Compare on each cheat page or the ${faqPage}.`,
+    a: `Map awareness only → ${lite}. co-op gunfights with aimbot → ${pro}. Full bot suite and priority patches → ${elite}. Compare on each cheat page or the ${faqPage}.`,
   },
   {
     id: 'elite-slots',
@@ -184,8 +184,8 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'blog-vs-cheats',
     topic: 'blog',
     icon: 'faqBlogVsCheats',
-    q: 'Are blog cheat codes the same as ranked cheats?',
-    a: `No. Blog articles about Steam console commands apply only in custom lobbies with cheats enabled. Ranked palworld hacks are separate products—see ${lite}, ${pro} and ${elite}.`,
+    q: 'Are blog cheat codes the same as co-op cheats?',
+    a: `No. Blog articles about Steam console commands apply only in custom lobbies with cheats enabled. co-op palworld hacks are separate products—see ${lite}, ${pro} and ${elite}.`,
   },
   {
     id: 'blog-setup',
@@ -214,7 +214,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhoPro',
     q: 'Who should buy Pro?',
-    a: `Ranked players who want Aimbot, Smooth Aim and Hotkey macros with ESP wallhack included. Pro is the most popular tier at getpalworldhack.net.`,
+    a: `co-op players who want Aimbot, Smooth Aim and Hotkey macros with ESP wallhack included. Pro is the most popular tier at getpalworldhack.net.`,
     scopes: ['pro'],
   },
   {
@@ -240,11 +240,11 @@ export const siteFaqs: SiteFaqItem[] = [
     a: a('Open Discord after purchase with your order email, Windows version and Palworld client build. Staff walk through loader setup live.'),
   },
   {
-    id: 'zero-build-ranked',
+    id: 'zero-build-co-op',
     topic: 'plans',
     icon: 'faqZoomRanked',
-    q: 'Do tiers work in Co-op and ranked?',
-    a: `Yes—${lite}, ${pro} and ${elite} include Co-op and ranked presets in the portal. Tune distance caps and script delay before your first queue.`,
+    q: 'Do tiers work in Co-op and co-op?',
+    a: `Yes—${lite}, ${pro} and ${elite} include Co-op and co-op presets in the portal. Tune distance caps and script delay before your first queue.`,
   },
   {
     id: 'zoom-hack',
@@ -353,7 +353,7 @@ const blogTopicFaqs: Record<string, SiteFaqItem[]> = {
       topic: 'blog',
       icon: 'faqBlogGuideStart',
       q: 'Should I use console cheat codes in co-op?',
-      a: a('No. Creative lobby cheat codes only work in custom games with cheats enabled. Ranked requires separate palworld hacks from getpalworldhack.net tiers.'),
+      a: a('No. private world lobby cheat codes only work in custom games with cheats enabled. co-op requires separate palworld hacks from getpalworldhack.net tiers.'),
     },
     {
       id: 'blog-guide-tier',

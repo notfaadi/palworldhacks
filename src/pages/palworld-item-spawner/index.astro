@@ -2,7 +2,7 @@
 import SeoGuideLayout from '../../layouts/SeoGuideLayout.astro';
 import { SEO_INTROS } from '../../data/seo-intros';
 import SeoDataTable from '../../components/SeoDataTable.astro';
-import { palworldItemIds } from '../../data/palworld-item-ids';
+import { allPalworldItemIds } from '../../data/palworld-item-ids';
 import { itemListSchema } from '../../utils/schema';
 ---
 
@@ -11,7 +11,7 @@ import { itemListSchema } from '../../utils/schema';
   breadcrumbLabel="Item spawner"
   intro={SEO_INTROS['/palworld-item-spawner/']!}
   jsonLd={itemListSchema(
-    palworldItemIds.map((row) => ({
+    allPalworldItemIds.map((row) => ({
       name: row.name,
       url: '/palworld-item-spawner/',
     })),
@@ -30,7 +30,7 @@ import { itemListSchema } from '../../utils/schema';
       { key: 'itemId', label: 'Item ID' },
       { key: 'category', label: 'Category' },
     ]}
-    rows={palworldItemIds}
+    rows={allPalworldItemIds}
   />
   <h2>Palworld spawn item command examples</h2>
   <pre class="not-prose overflow-x-auto rounded-lg border border-border bg-muted/20 p-4 text-sm"><code>{`GiveItem PalSphere_Mega 50

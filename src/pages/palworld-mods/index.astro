@@ -1,22 +1,30 @@
 ---
 import SeoGuideLayout from '../../layouts/SeoGuideLayout.astro';
 import { SEO_INTROS } from '../../data/seo-intros';
+import SeoDataTable from '../../components/SeoDataTable.astro';
+import { palworldModsCatalog } from '../../data/palworld-mods-catalog';
 ---
 
 <SeoGuideLayout pathname="/palworld-mods/" breadcrumbLabel="Mods" intro={SEO_INTROS['/palworld-mods/']!}>
-  <h2>Best Palworld mods for performance and UI</h2>
+  <h2>Best Palworld mods checked for 1.0.5</h2>
   <p>
-    Start with FPS stabilizers and UI clarity mods before stacking gameplay cheats. Pocketpair 1.0.5 changed asset
-    paths in several hotfixes—verify mod comments for “works on 1.0.5”.
+    Quality Palworld mods fix performance, UI and breeding workflows without touching Easy Anti-Cheat on Steam. Install
+    through a mod manager mindset: one mod at a time, verify load, then add cheat-adjacent modules only on offline saves.
   </p>
-  <h2>Palworld QoL mods for breeding and base building</h2>
-  <p>
-    Breeding calculators, base snap helpers and map markers remain the most downloaded Palworld mods of 2026. They
-    complement—not replace—trainers when you play on private servers with friends.
-  </p>
+  <SeoDataTable
+    caption="Curated mod types — confirm Nexus or GitHub comments match Pocketpair 1.0.5"
+    columns={[
+      { key: 'name', label: 'Mod' },
+      { key: 'type', label: 'Type' },
+      { key: 'patch', label: 'Patch' },
+      { key: 'summary', label: 'Summary' },
+    ]}
+    rows={palworldModsCatalog}
+  />
   <h2>Palworld mod manager workflow</h2>
-  <p>
-    Install one mod at a time, launch Palworld, then confirm saves load. Roll back using the backup steps in our
-    install guide if a pack conflicts with anti-cheat on Game Pass PC.
-  </p>
+  <ol>
+    <li>Back up saves via our <a href="/how-to-install/">install guide</a>.</li>
+    <li>Install QoL / FPS mods before any cheat training modules.</li>
+    <li>Launch Palworld, confirm stability, then layer <a href="/palworld-mod-menu/">mod menu</a> docs if needed.</li>
+  </ol>
 </SeoGuideLayout>
