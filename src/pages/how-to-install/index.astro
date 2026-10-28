@@ -1,0 +1,32 @@
+---
+import SeoGuideLayout from '../../layouts/SeoGuideLayout.astro';
+import { SEO_INTROS } from '../../data/seo-intros';
+import { howToSchema } from '../../utils/schema';
+import { installPalworldHacksSteps } from '../../data/seo-howto';
+---
+
+<SeoGuideLayout
+  pathname="/how-to-install/"
+  breadcrumbLabel="Install guide"
+  intro={SEO_INTROS['/how-to-install/']!}
+  jsonLd={howToSchema({
+    name: 'Install Palworld hacks safely',
+    description: 'Back up saves and install external Palworld trainers for Steam and Game Pass PC on patch 1.0.5.',
+    url: '/how-to-install/',
+    steps: installPalworldHacksSteps,
+  })}
+>
+  <h2>Palworld trainer setup on Windows</h2>
+  <p>
+    When a Palworld hack is not working, disable overlays (Discord, GeForce), confirm you matched Steam versus Game
+    Pass paths, and ensure Pocketpair updated to 1.0.5 without leaving the launcher mid-patch.
+  </p>
+  <h2>Palworld save backup before mods</h2>
+  <ol>
+    {installPalworldHacksSteps.map((step) => (
+      <li>
+        <strong>{step.name}</strong> — {step.text}
+      </li>
+    ))}
+  </ol>
+</SeoGuideLayout>

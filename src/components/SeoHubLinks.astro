@@ -1,0 +1,28 @@
+---
+import { SEO_HUB_LINKS } from '../data/seo';
+---
+
+<section class="border-t border-border bg-muted/10 py-10 md:py-12" aria-labelledby="seo-hub-title">
+  <div class="mx-auto max-w-6xl px-5">
+    <h2 id="seo-hub-title" class="text-xl font-semibold tracking-tight md:text-2xl">
+      Palworld hacks guides — trainers, mods and commands
+    </h2>
+    <p class="mt-2 max-w-2xl text-sm text-muted-foreground">
+      Pocketpair Palworld 1.0.5 resources for Windows 10 and 11, Steam and Xbox Game Pass PC — updated for patch day.
+    </p>
+    <ul class="mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        SEO_HUB_LINKS.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="block rounded-lg border border-border bg-background px-4 py-3 text-sm font-medium hover:border-primary/40 hover:bg-muted/30"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

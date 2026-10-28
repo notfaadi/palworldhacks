@@ -14,7 +14,9 @@
     "astro": "astro",
     "optimize:images": "node scripts/optimize-images.mjs",
     "fetch:gameplay": "node scripts/fetch-palworld-gameplay.mjs",
-    "fetch:blog-images": "node scripts/fetch-blog-category-images.mjs"
+    "fetch:blog-images": "node scripts/fetch-blog-category-images.mjs",
+    "generate:og": "node scripts/generate-og-images.mjs",
+    "verify:seo": "node scripts/verify-seo.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

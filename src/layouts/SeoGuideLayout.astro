@@ -1,0 +1,42 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SeoResourcePage from '../components/SeoResourcePage.astro';
+import { getSeoPageEntry, normalizeSeoPath } from '../data/seo';
+import { resolvePageSeo } from '../config/seo';
+import { breadcrumbSchema, webPageSchema } from '../utils/schema';
+import type { BreadcrumbItem } from '../utils/schema';
+
+interface Props {
+  pathname: string;
+  intro: string;
+  breadcrumbLabel: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const { pathname, intro, breadcrumbLabel, jsonLd = [] } = Astro.props;
+const path = normalizeSeoPath(pathname);
+const entry = getSeoPageEntry(path)!;
+const seo = resolvePageSeo(path);
+const breadcrumbs: BreadcrumbItem[] = [
+  { name: 'Home', path: '/' },
+  { name: breadcrumbLabel, path },
+];
+
+const baseLd = [
+  webPageSchema({ name: entry.h1, description: entry.description, url: path }),
+  breadcrumbSchema(breadcrumbs),
+];
+const allLd = Array.isArray(jsonLd) ? [...baseLd, ...jsonLd] : [...baseLd, jsonLd];
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.ogImage}
+  ogImageAlt={entry.h1}
+  jsonLd={allLd}
+>
+  <SeoResourcePage entry={entry} breadcrumbs={breadcrumbs} intro={intro}>
+    <slot />
+  </SeoResourcePage>
+</BaseLayout>

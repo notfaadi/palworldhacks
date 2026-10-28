@@ -1,48 +1,66 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getAllFaqs } from '../data/faq';
 import { resolvePageSeo } from '../config/seo';
+import { getSeoPageEntry } from '../data/seo';
 import { breadcrumbSchema, faqPageSchema, webPageSchema } from '../utils/schema';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import SiteFaqSection from '../components/SiteFaqSection.astro';
-import SectionHeader from '../components/SectionHeader.astro';
+import SeoInternalCta from '../components/SeoInternalCta.astro';
+import { seoFaqPairs } from '../data/seo-faq';
 
 const seo = resolvePageSeo('/faq/');
+const entry = getSeoPageEntry('/faq/')!;
 const breadcrumbs = [
   { name: 'Home', path: '/' },
   { name: 'FAQ', path: '/faq/' },
 ];
 
-const faqs = getAllFaqs();
+const schemaFaqs = seoFaqPairs.map((f, i) => ({
+  num: String(i + 1).padStart(2, '0'),
+  q: f.q,
+  a: f.a,
+}));
 ---
 
 <BaseLayout
   title={seo.title}
   description={seo.description}
+  ogImage={seo.ogImage}
+  ogImageAlt={entry.h1}
   jsonLd={[
-    webPageSchema({
-      name: 'FAQ — Palworld Hacks & Products',
-      description:
-        'Answers about Palworld cheat tiers, ESP wallhack, aimbot, HWID tools, blog guides and checkout at localhost:4321.',
-      url: '/faq/',
-    }),
-    faqPageSchema(faqs.map((f, i) => ({ num: String(i + 1).padStart(2, '0'), q: f.q, a: f.a.replace(/<[^>]+>/g, '') }))),
+    webPageSchema({ name: entry.h1, description: entry.description, url: '/faq/' }),
+    faqPageSchema(schemaFaqs),
     breadcrumbSchema(breadcrumbs),
   ]}
 >
   <section class="border-b border-border bg-muted/10 py-8 md:py-12">
-    <div class="mx-auto max-w-6xl px-5">
+    <div class="mx-auto max-w-3xl px-5">
       <Breadcrumbs items={breadcrumbs} />
-      <div class="mt-6">
-        <SectionHeader
-          eyebrow="Help center"
-          title="Palworld hacks FAQ"
-          desc="Everything about Lite, Pro, Elite tiers, utilities, safety and blog topics—in one place."
-          titleId="faq-page-title"
-        />
-      </div>
+      <header class="mt-6 space-y-4">
+        <h1 id="faq-page-title" class="text-3xl font-bold tracking-tight md:text-4xl">{entry.h1}</h1>
+        <p class="text-base leading-relaxed text-muted-foreground">
+          Straight answers about Palworld hack safety, ban risk on Steam and Game Pass PC, co-op rules, antivirus
+          false positives and Pocketpair patch 1.0.5 compatibility — read before you download trainers or mod menus.
+        </p>
+      </header>
     </div>
   </section>
 
-  <SiteFaqSection items={faqs} variant="full" titleId="faq-page-list" />
+  <section class="py-10 md:py-14" aria-labelledby="faq-page-list">
+    <div class="mx-auto max-w-3xl px-5">
+      <h2 id="faq-page-list" class="text-xl font-semibold">
+        Are Palworld hacks safe? Ban risk and compatibility
+      </h2>
+      <dl class="space-y-8">
+        {
+          seoFaqPairs.map((item) => (
+            <div class="rounded-xl border border-border bg-background p-5">
+              <dt class="text-lg font-semibold">{item.q}</dt>
+              <dd class="mt-2 text-sm leading-relaxed text-muted-foreground">{item.a}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <SeoInternalCta />
+    </div>
+  </section>
 </BaseLayout>

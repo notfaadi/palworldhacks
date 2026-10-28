@@ -1,0 +1,22 @@
+---
+import SeoGuideLayout from '../../layouts/SeoGuideLayout.astro';
+import { SEO_INTROS } from '../../data/seo-intros';
+---
+
+<SeoGuideLayout pathname="/palworld-mod-menu/" breadcrumbLabel="Mod menu" intro={SEO_INTROS['/palworld-mod-menu/']!}>
+  <h2>Palworld ESP and wallhack overlays</h2>
+  <p>
+    ESP draws Pal boxes, player skeletons and loot through terrain—pair with radar for base raids. Keep opacity low
+    on stream if you record Pocketpair gameplay; “stream proof” depends on capture method, not marketing copy.
+  </p>
+  <h2>Teleport and Palworld speed hack toggles</h2>
+  <p>
+    Teleport saves hours in tower climbs; speed hacks stress physics on co-op clients. Test on a dedicated server
+    you control before joining friends. External mod menus should not patch game binaries—overlay only.
+  </p>
+  <h2>Undetected mod menus — no DLL injection</h2>
+  <p>
+    Our listed Palworld mod menu workflow stays external with no DLL injection into the Pocketpair client. That
+    reduces classic signature hits but does not remove behavioral detection on official servers after 1.0.5.
+  </p>
+</SeoGuideLayout>

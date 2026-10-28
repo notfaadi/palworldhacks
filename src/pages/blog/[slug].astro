@@ -3,7 +3,8 @@ import '../../styles/blog-pages.css';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { t } from '../../i18n';
 import { getAllBlogSlugs, getBlogPost, getRelatedBlogPosts } from '../../data/blog';
-import { cheatMetaDescription, pageTitle } from '../../config/seo';
+import { cheatMetaDescription, pageTitle, SITE_ORIGIN } from '../../config/seo';
+import SeoInternalCta from '../../components/SeoInternalCta.astro';
 import {
   articleSchema,
   breadcrumbSchema,
@@ -53,7 +54,7 @@ function linkify(text: string): string {
     .replace(/(https:\/\/palworldhacks\.com[^\s.,;)]*)/g, (_match, url: string) => {
       const path = url.replace(/^https:\/\/palworldhacks\.com/, '');
       const normalized = normalizeInternalPath(path);
-      const href = normalized.startsWith('http') ? normalized : `https://localhost:4321${normalized}`;
+      const href = normalized.startsWith('http') ? normalized : `${SITE_ORIGIN}${normalized}`;
       return `<a href="${href}">${url}</a>`;
     });
 }
@@ -195,6 +196,12 @@ const published = parseBlogDate(post.date);
       </div>
     </div>
   </article>
+
+  <section class="border-t border-border bg-muted/10 py-10">
+    <div class="mx-auto max-w-3xl px-5">
+      <SeoInternalCta />
+    </div>
+  </section>
 
   <SiteFaqSection
     items={getBlogFaqs(post.tag, post.slug)}

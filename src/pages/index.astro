@@ -7,19 +7,20 @@ import ProductsSection from '../components/ProductsSection.astro';
 import ContentSections from '../components/ContentSections.astro';
 import { t } from '../i18n';
 import { resolvePageSeo } from '../config/seo';
-import { faqPageSchema, organizationSchema, websiteSchema } from '../utils/schema';
-import { getLandingFaqs } from '../data/faq';
+import { organizationSchema, softwareApplicationHomeSchema, websiteSchema } from '../utils/schema';
 import { webpSrc } from '../utils/responsiveImage';
+import SeoHubLinks from '../components/SeoHubLinks.astro';
 
 const seo = resolvePageSeo('/');
-const homeFaqs = getLandingFaqs();
 const heroLcpImage = webpSrc('/images/gameplay/palworld-esp-wallhack.png', 512);
 ---
 
 <BaseLayout
   title={seo.title}
   description={seo.description}
-  jsonLd={[websiteSchema(), organizationSchema(), faqPageSchema(homeFaqs.map((f, i) => ({ num: String(i + 1).padStart(2, '0'), q: f.q, a: f.a.replace(/<[^>]+>/g, '') })))]}
+  ogImage={seo.ogImage}
+  ogImageAlt="Palworld Hacks & Cheats — Free Trainers, Mod Menu and Console Commands"
+  jsonLd={[websiteSchema(), organizationSchema(), softwareApplicationHomeSchema()]}
 >
   <link
     slot="head"
@@ -35,4 +36,5 @@ const heroLcpImage = webpSrc('/images/gameplay/palworld-esp-wallhack.png', 512);
   <ProductsSection />
   <WhySetupSection />
   <ContentSections />
+  <SeoHubLinks />
 </BaseLayout>

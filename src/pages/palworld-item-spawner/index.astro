@@ -1,0 +1,27 @@
+---
+import SeoGuideLayout from '../../layouts/SeoGuideLayout.astro';
+import { SEO_INTROS } from '../../data/seo-intros';
+---
+
+<SeoGuideLayout
+  pathname="/palworld-item-spawner/"
+  breadcrumbLabel="Item spawner"
+  intro={SEO_INTROS['/palworld-item-spawner/']!}
+>
+  <h2>Palworld item spawner tools</h2>
+  <p>
+    Trainers expose searchable item lists; mod menus filter by category. For server admins, Palworld spawn item
+    commands remain the most portable approach when joining friends who disallow client-side spawners.
+  </p>
+  <h2>Palworld item list highlights</h2>
+  <ul>
+    <li>Spheres, weapons and armor tiers for PvP tests</li>
+    <li>Lifmunk Effigy and stat fruit for breeding labs</li>
+    <li>Jetragon and endgame Pal eggs for sandbox worlds</li>
+  </ul>
+  <h2>Palworld spawn item command tips</h2>
+  <p>
+    Cross-check IDs after each Pocketpair balance pass—duplicate names exist across tech tiers. Export your table
+    when 1.0.6 drops so you can diff changes quickly.
+  </p>
+</SeoGuideLayout>

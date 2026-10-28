@@ -1,0 +1,28 @@
+---
+import SeoGuideLayout from '../../layouts/SeoGuideLayout.astro';
+import { SEO_INTROS } from '../../data/seo-intros';
+---
+
+<SeoGuideLayout
+  pathname="/palworld-trainers/"
+  breadcrumbLabel="Trainers"
+  intro={SEO_INTROS['/palworld-trainers/']!}
+>
+  <h2>Palworld trainer download and cheat engine tables</h2>
+  <p>
+    Match FLiNG-style Palworld trainer downloads to your storefront: Steam validates under Program Files (x86),
+    while Game Pass PC lives under WindowsApps with different permissions. WeMod can work but often lags
+    Pocketpair hotfixes—keep a backup cheat engine table tagged for 1.0.5.
+  </p>
+  <h2>Undetected Palworld trainers — external, RAM-based</h2>
+  <p>
+    We only recommend external, RAM-based trainers that do not inject DLLs into Palworld.exe. That is our trust
+    basis for calling a build “undetected” relative to naive internals—it is not a guarantee against Easy
+    Anti-Cheat or player reports on public co-op.
+  </p>
+  <ul>
+    <li>God mode and infinite stamina toggles for solo worlds</li>
+    <li>100% capture rate and breeding stat edits for private hosts</li>
+    <li>Instant crafting and Technology Points sliders where supported</li>
+  </ul>
+</SeoGuideLayout>

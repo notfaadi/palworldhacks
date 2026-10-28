@@ -28,8 +28,25 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
     return item;
   }
 
-  if (path === '/blog/') {
+  if (path === '/blog/' || path.startsWith('/blog/page/')) {
     item.priority = 0.9;
+    item.changefreq = 'weekly';
+    return item;
+  }
+
+  const seoHubs = [
+    '/palworld-trainers/',
+    '/palworld-mod-menu/',
+    '/palworld-console-commands/',
+    '/palworld-mods/',
+    '/palworld-god-mode/',
+    '/palworld-item-spawner/',
+    '/palworld-hacks-xbox/',
+    '/download/',
+    '/how-to-install/',
+  ];
+  if (seoHubs.includes(path)) {
+    item.priority = 0.85;
     item.changefreq = 'weekly';
     return item;
   }

@@ -1,0 +1,27 @@
+---
+import SeoGuideLayout from '../../layouts/SeoGuideLayout.astro';
+import { SEO_INTROS } from '../../data/seo-intros';
+---
+
+<SeoGuideLayout
+  pathname="/palworld-console-commands/"
+  breadcrumbLabel="Console commands"
+  intro={SEO_INTROS['/palworld-console-commands/']!}
+>
+  <h2>Palworld admin commands and spawn syntax</h2>
+  <p>
+    Open the admin console on dedicated servers with the password Pocketpair documents for 1.0.x. Offline worlds
+    may expose different flags—always check patch notes when a hotfix renames cheat codes.
+  </p>
+  <h2>Palworld cheat codes for items and XP</h2>
+  <ul>
+    <li><code>GiveItem</code> — spawn by Palworld item IDs (see item spawner hub)</li>
+    <li>Teleport coordinates for towers, bases and Jetragon nests</li>
+    <li>XP and Technology Points boosts for private progression tests</li>
+  </ul>
+  <h2>Palworld spawn command examples</h2>
+  <p>
+    Copy commands into your server console; never paste untrusted strings from random forums. Pair this list with
+    our trainer guide if you prefer hotkeys over typing admin lines each session.
+  </p>
+</SeoGuideLayout>

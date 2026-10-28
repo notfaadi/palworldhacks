@@ -7,10 +7,10 @@ const productBase = PRODUCT_BASE;
 export const en: Translations = {
   site: {
     name: 'Palworld Hacks',
-    domain: 'localhost:4321',
-    title: 'Buy Undetected Palworld Hacks | Aimbot, ESP & Wallhack',
+    domain: 'getpalworldhack.net',
+    title: 'Palworld Hacks & Cheats 2026 – Free Trainers & Mods',
     description:
-      'Buy undetected Palworld hacks for PC: aimbot, ESP, wallhack, radar, loot ESP and skin changer. Updated after Palworld anti-cheat patches.',
+      'Download free, undetected Palworld hacks and trainers for PC. God mode, infinite stamina, 100% capture rate, item spawning and a mod menu — updated for 1.0.5.',
     discord: DISCORD_URL,
   },
   nav: [
@@ -23,10 +23,10 @@ export const en: Translations = {
   hero: {
     status: 'Palworld online',
     eyebrow: 'Undetected Palworld hacks',
-    titleLine1: 'Undetected Palworld Hacks',
-    titleLine2: 'Aimbot, ESP & Wallhack',
+    titleLine1: 'Palworld Hacks & Cheats —',
+    titleLine2: 'Free Trainers, Mod Menu and Console Commands',
     subtitle:
-      'Buy Palworld hacks for PC — aimbot, ESP, wallhack, radar and loot ESP for Open World, Co-op and Ranked. Updated after every anti-cheat patch.',
+      'Palworld hacks for Steam and Xbox Game Pass PC on Pocketpair 1.0.5 — free trainers, god mode, item IDs and mod menus. Updated after every 1.0.x patch, no survey.',
     ctaPrimary: 'Buy cheats',
     ctaCloudDma: 'Buy Cloud DMA',
     modesLabel: 'Modes',

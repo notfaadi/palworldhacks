@@ -2,11 +2,9 @@ User-agent: *
 Allow: /
 
 Disallow: /go/
+Disallow: /api/
+Disallow: /*?
 
-Sitemap: https://localhost:4321/sitemap.xml
-Sitemap: https://localhost:4321/sitemap-pages.xml
-Sitemap: https://localhost:4321/sitemap-products.xml
-Sitemap: https://localhost:4321/sitemap-blog.xml
-Sitemap: https://localhost:4321/sitemap-forum.xml
+Sitemap: https://getpalworldhack.net/sitemap-index.xml
 
-# RSS: https://localhost:4321/rss.xml
+# RSS: https://getpalworldhack.net/rss.xml

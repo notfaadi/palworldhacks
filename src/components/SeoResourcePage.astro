@@ -1,0 +1,31 @@
+---
+import type { SeoPageEntry } from '../data/seo';
+import Breadcrumbs from './Breadcrumbs.astro';
+import SeoInternalCta from './SeoInternalCta.astro';
+import type { BreadcrumbItem } from '../utils/schema';
+
+interface Props {
+  entry: SeoPageEntry;
+  breadcrumbs: BreadcrumbItem[];
+  intro: string;
+}
+
+const { entry, breadcrumbs, intro } = Astro.props;
+---
+
+<section class="border-b border-border bg-muted/10 py-8 md:py-12">
+  <div class="mx-auto max-w-3xl px-5">
+    <Breadcrumbs items={breadcrumbs} />
+    <header class="mt-6 space-y-4">
+      <h1 id="seo-page-title" class="text-3xl font-bold tracking-tight md:text-4xl">{entry.h1}</h1>
+      <p class="text-base leading-relaxed text-muted-foreground">{intro}</p>
+    </header>
+  </div>
+</section>
+
+<section class="py-10 md:py-14">
+  <div class="mx-auto max-w-3xl px-5 prose prose-neutral dark:prose-invert max-w-none">
+    <slot />
+    <SeoInternalCta />
+  </div>
+</section>

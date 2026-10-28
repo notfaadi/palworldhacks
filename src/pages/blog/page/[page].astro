@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { blogPosts } from '../../../data/blog';
+import { resolvePageSeo } from '../../../config/seo';
+import { getSeoPageEntry } from '../../../data/seo';
+import { breadcrumbSchema, collectionPageSchema } from '../../../utils/schema';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+import SeoInternalCta from '../../../components/SeoInternalCta.astro';
+import { blogPagePath, getBlogPageCount, getBlogPostsForPage } from '../../../utils/blog-pagination';
+import { canonicalUrl } from '../../../config/seo';
+
+export function getStaticPaths() {
+  const total = getBlogPageCount();
+  return Array.from({ length: total - 1 }, (_, i) => ({
+    params: { page: String(i + 2) },
+  }));
+}
+
+const pageNum = Number(Astro.params.page);
+const { posts, totalPages } = getBlogPostsForPage(pageNum);
+if (pageNum < 2 || pageNum > totalPages) {
+  return Astro.redirect('/blog/');
+}
+
+const seo = resolvePageSeo('/blog/');
+const entry = getSeoPageEntry('/blog/')!;
+const breadcrumbs = [
+  { name: 'Home', path: '/' },
+  { name: 'Blog', path: '/blog/' },
+  { name: `Page ${pageNum}`, path: blogPagePath(pageNum) },
+];
+const prevHref = blogPagePath(pageNum - 1);
+const nextHref = pageNum < totalPages ? blogPagePath(pageNum + 1) : undefined;
+---
+
+<BaseLayout
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.ogImage}
+  ogImageAlt={entry.h1}
+  jsonLd={[
+    collectionPageSchema({ name: entry.h1, description: entry.description, url: blogPagePath(pageNum) }),
+    breadcrumbSchema(breadcrumbs),
+  ]}
+>
+  <link slot="head" rel="prev" href={canonicalUrl(prevHref)} />
+  {nextHref && <link slot="head" rel="next" href={canonicalUrl(nextHref)} />}
+
+  <section class="py-8 md:py-12">
+    <div class="mx-auto max-w-6xl px-5">
+      <Breadcrumbs items={breadcrumbs} />
+      <header class="section-header mt-6 max-w-2xl">
+        <p class="section-header__eyebrow">Patch notes</p>
+        <h1 class="section-header__title">{entry.h1}</h1>
+        <p class="section-header__subtitle">Page {pageNum} of {totalPages} — {blogPosts.length} articles</p>
+      </header>
+
+      <div class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post, index) => (
+          <BlogCard post={post} index={index} showDate />
+        ))}
+      </div>
+
+      <nav class="mt-12 flex flex-wrap items-center justify-between gap-4" aria-label="Blog pagination">
+        <a href={prevHref} class="text-sm font-medium text-primary hover:underline">← Newer posts</a>
+        {nextHref ? (
+          <a href={nextHref} class="text-sm font-medium text-primary hover:underline">Older posts →</a>
+        ) : (
+          <span />
+        )}
+      </nav>
+      <div class="mt-8">
+        <SeoInternalCta />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

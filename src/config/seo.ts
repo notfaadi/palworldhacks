@@ -1,10 +1,11 @@
 import { t } from '../i18n';
-import { SITE_DOMAIN as INDEXNOW_HOST_NAME } from './site';
-import { getPageSeoEntry } from './pageSeo';
+import { SITE_DOMAIN as INDEXNOW_HOST_NAME, SITE_URL } from './site';
+import { getProductSeoEntry } from './pageSeo';
+import { getSeoPageEntry, normalizeSeoPath, resolveSeo as resolveSeoEntry } from '../data/seo';
 
-export const SITE_ORIGIN = `https://${t.site.domain}`;
+export const SITE_ORIGIN = SITE_URL.replace(/\/$/, '');
 
-export const DEFAULT_OG_IMAGE = '/images/gameplay/palworld-esp-wallhack.png';
+export const DEFAULT_OG_IMAGE = '/img/og/home.jpg';
 
 export const GA_MEASUREMENT_ID = import.meta.env.PUBLIC_GA_MEASUREMENT_ID as string | undefined;
 
@@ -38,10 +39,24 @@ export function absoluteAssetUrl(path: string): string {
   return `${SITE_ORIGIN}${normalized}`;
 }
 
-export function resolvePageSeo(pathname: string): { title: string; description: string } {
-  const entry = getPageSeoEntry(pathname);
-  if (entry) return entry;
-  return { title: t.site.title, description: t.site.description };
+export function resolvePageSeo(pathname: string): {
+  title: string;
+  description: string;
+  ogImage?: string;
+} {
+  const path = normalizeSeoPath(pathname);
+  const product = getProductSeoEntry(path);
+  if (product) return { ...product, ogImage: resolveSeoEntry(path).ogImage };
+
+  const resolved = resolveSeoEntry(path);
+  if (getSeoPageEntry(path)) {
+    return { title: resolved.title, description: resolved.description, ogImage: resolved.ogImage };
+  }
+  return {
+    title: resolved.title,
+    description: resolved.description,
+    ogImage: resolved.ogImage,
+  };
 }
 
 export function pageTitle(keyword: string, brand = t.site.name): string {

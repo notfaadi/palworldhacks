@@ -28,7 +28,54 @@ export function websiteSchema() {
     url: `${SITE_ORIGIN}/`,
     inLanguage: 'en-US',
     description:
-      'Palworld hacks with aimbot, ESP, and radar hack, Skin Changer and ranked-safe tiers for PC.',
+      'Free Palworld hacks, trainers, mod menus and console commands for Steam and Game Pass PC — updated for Palworld 1.0.5.',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_ORIGIN}/blog/?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
+export function softwareApplicationHomeSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Palworld Hacks Resource Pack',
+    applicationCategory: 'GameApplication',
+    operatingSystem: 'Windows 10, Windows 11',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    description:
+      'Free Palworld trainer guides, mod menu documentation and console command references for patch 1.0.5.',
+    url: `${SITE_ORIGIN}/`,
+  };
+}
+
+export function howToSchema(input: {
+  name: string;
+  description: string;
+  url: string;
+  steps: { name: string; text: string }[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: input.name,
+    description: input.description,
+    url: canonicalUrl(input.url),
+    step: input.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
   };
 }
 

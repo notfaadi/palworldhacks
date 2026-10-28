@@ -1,98 +1,64 @@
 /**
- * Central titles/descriptions for high-traffic routes.
- * After Search Console shows impressions, edit the matching path here and redeploy.
+ * @deprecated Import from ../data/seo.ts — kept for backward-compatible imports.
  */
+export {
+  normalizeSeoPath,
+  getSeoPageEntry as getPageSeoEntry,
+  type SeoPageEntry as PageSeoEntry,
+} from '../data/seo';
 
-export interface PageSeoEntry {
-  title: string;
-  description: string;
-}
+/** Product detail routes — unique titles (not in public SEO inventory). */
+import type { SeoPageEntry } from '../data/seo';
+import { normalizeSeoPath } from '../data/seo';
 
-export const PAGE_SEO: Record<string, PageSeoEntry> = {
-  '/': {
-    title: 'Buy Undetected Palworld Hacks | Aimbot, ESP & Wallhack',
-    description:
-      'Buy undetected Palworld hacks for PC — aimbot, ESP, wallhack, radar, loot ESP and skin changer. Updated after every Palworld anti-cheat patch.',
-  },
-  '/products/palworld-hacks/': {
-    title: 'Buy Palworld Hacks | Cloud DMA, Elite & Utilities',
-    description:
-      'Shop Palworld hacks for PC: Cloud DMA, Elite aimbot & ESP wallhack, HWID spoofer, UGC recovery and Skin Changer. Checkout via Levo Cheats.',
-  },
+const PRODUCT_SEO: Record<string, Pick<SeoPageEntry, 'title' | 'description'>> = {
   '/products/palworld-hacks/elite/': {
-    title: 'Buy Palworld Elite Cheats | Aimbot, ESP & Loot Assist',
+    title: 'Palworld Elite Cheats 2026 – Aimbot & ESP Wallhack',
     description:
-      'Buy Palworld Elite cheats with aimbot, ESP wallhack, loot assist, Auto Finish, Skin Changer and priority anti-cheat patch updates.',
+      'Palworld Elite cheats with aimbot, ESP wallhack and loot assist for Windows 11. Updated for Pocketpair 1.0.5, external loader, tested after anti-cheat patches — no survey.',
   },
   '/products/palworld-hacks/cloud-dma/': {
-    title: 'Buy Palworld Cloud DMA | Hardware DMA Suite',
+    title: 'Palworld Cloud DMA 2026 – Hardware DMA Suite',
     description:
-      'Buy Palworld Cloud DMA — hardware-backed reads, cloud relay, Palworld firmware profiles and operator setup through Levo Cheats checkout.',
+      'Palworld Cloud DMA with hardware reads and cloud relay for second-PC setups on 1.0.5. Firmware profiles, operator portal and Levo checkout — no DLL injection on main PC.',
   },
   '/products/palworld-hacks/hwid-spoofer/': {
-    title: 'Buy Palworld HWID Spoofer | Hardware Ban Bypass',
+    title: 'Palworld HWID Spoofer 2026 – Hardware Ban Tool',
     description:
-      'Buy a Palworld HWID spoofer for PC hardware bans — disk/MAC tools, compatibility scan and post-spoof checks before you launch cheats again.',
+      'Palworld HWID spoofer for disk and MAC bans on Windows 10/11. Compatibility scan and post-spoof checks before relaunching trainers on Steam — use at your own risk.',
   },
   '/products/palworld-hacks/ugc/': {
-    title: 'Buy Palworld UGC | anti-cheat & Steam Ban Appeal Tools',
+    title: 'Palworld UGC Tools 2026 – Ban Appeal Workflow',
     description:
-      'Buy Palworld UGC (Unban & Governance Control) to organize Steam and anti-cheat ban appeals, dispute workflows and case tracking.',
+      'Palworld UGC utilities to organize Steam and anti-cheat ban appeals, dispute evidence and case tracking after hardware flags on 1.0.5 — documentation only, no survey.',
   },
   '/products/palworld-hacks/unlock-all/': {
-    title: 'Buy Palworld Skin Changer | Unlock All Cosmetics',
+    title: 'Palworld Skin Changer 2026 – Unlock All Cosmetics',
     description:
-      'Buy Palworld Skin Changer / Unlock All — local outfit, wrap and pickaxe previews with your Palworld hacks loadout.',
+      'Palworld Skin Changer for local outfit and weapon previews on PC. Pairs with Elite cheats on patch 1.0.5 — cosmetic only, no ranked advantage claims.',
   },
   '/products/palworld-hacks/utilities/': {
-    title: 'Buy Palworld Cheat Utilities | HWID, UGC & Skin Changer',
+    title: 'Palworld Cheat Utilities 2026 – HWID & Skin Tools',
     description:
-      'Buy Palworld cheat utilities: HWID spoofer after hardware bans, UGC for Steam/anti-cheat appeals, and local Skin Changer / Unlock All.',
-  },
-  '/blog/': {
-    title: 'Palworld Cheat Guides | Aimbot, ESP Wallhack & EAC',
-    description:
-      'Read Palworld cheat guides on aimbot setup, ESP wallhack, Lite vs Pro, Creative practice and Palworld anti-cheat patch-day checks.',
-  },
-  '/forum/': {
-    title: 'Palworld Hacks Forum | Aimbot, ESP & Setup Help',
-    description:
-      'Palworld hacks forum for aimbot configs, ESP wallhack setup, anti-cheat status and product questions before you buy.',
-  },
-  '/faq/': {
-    title: 'Palworld Hacks FAQ | Aimbot, ESP, Bans & Setup',
-    description:
-      'Palworld hacks FAQ — tiers, aimbot, ESP wallhack, radar, HWID spoofer, Skin Changer, bans and loader setup before checkout.',
+      'Palworld cheat utilities: HWID spoofer, UGC appeal kit and Skin Changer. Windows 10/11 tools tested around 1.0.5 hotfixes — read FAQ before checkout.',
   },
   '/terms/': {
-    title: 'Terms for Palworld Hacks | License & Refunds',
+    title: 'Palworld Hacks Terms 2026 – License & Refunds',
     description:
-      'Terms for buying Palworld hacks on localhost:4321 — license use, delivery, refunds and account risk.',
+      'Terms for Palworld hacks and utilities on getpalworldhack.net — license use, delivery, refunds and account risk on Steam and Game Pass PC after patch 1.0.5.',
   },
   '/privacy/': {
-    title: 'Privacy Policy | Palworld Hacks Shop',
+    title: 'Privacy Policy – Palworld Hacks Site',
     description:
-      'How the Palworld hacks shop at localhost:4321 uses analytics, cookies and contact data.',
+      'How getpalworldhack.net uses analytics, cookies and contact data when you download trainers or shop Palworld cheats on Windows PC — updated 2026.',
   },
   '/about/': {
-    title: 'About Palworld Hacks | Buy PC Aimbot & ESP',
+    title: 'About Palworld Hacks – Guides & Cheats 2026',
     description:
-      'About Palworld Hacks — we sell PC Palworld hacks (aimbot, ESP, wallhack), guides and utilities at localhost:4321.',
-  },
-  '/support/': {
-    title: 'Palworld Hacks Support | Loader, HWID & Checkout',
-    description:
-      'Palworld hacks support for loader setup, aimbot/ESP configs, HWID spoofing and checkout help — 24/7 Discord.',
+      'About getpalworldhack.net — Palworld trainer guides, mod menu docs and Elite checkout for Steam and Game Pass on patch 1.0.5. Free resources, no survey.',
   },
 };
 
-export function normalizeSeoPath(pathname: string): string {
-  let path = pathname || '/';
-  if (!path.startsWith('/')) path = `/${path}`;
-  if (path !== '/' && !path.endsWith('/')) path = `${path}/`;
-  return path;
-}
-
-export function getPageSeoEntry(pathname: string): PageSeoEntry | undefined {
-  return PAGE_SEO[normalizeSeoPath(pathname)];
+export function getProductSeoEntry(pathname: string): Pick<SeoPageEntry, 'title' | 'description'> | undefined {
+  return PRODUCT_SEO[normalizeSeoPath(pathname)];
 }

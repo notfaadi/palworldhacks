@@ -1,0 +1,37 @@
+---
+import SeoGuideLayout from '../../layouts/SeoGuideLayout.astro';
+import { SEO_INTROS } from '../../data/seo-intros';
+import { howToSchema } from '../../utils/schema';
+import { palworldGodModeSteps } from '../../data/seo-howto';
+---
+
+<SeoGuideLayout
+  pathname="/palworld-god-mode/"
+  breadcrumbLabel="God mode"
+  intro={SEO_INTROS['/palworld-god-mode/']!}
+  jsonLd={howToSchema({
+    name: 'Enable Palworld god mode',
+    description: 'Steps to toggle Palworld god mode with trainers, mod menus or console admin commands on patch 1.0.5.',
+    url: '/palworld-god-mode/',
+    steps: palworldGodModeSteps,
+  })}
+>
+  <h2>Palworld god mode with trainers and mods</h2>
+  <p>
+    Trainers map god mode to F-keys; mod menus bury invincibility under combat tabs. Always toggle off before
+    saving if Pocketpair stability drops—corrupted worlds are rarer on 1.0.5 but still possible when stacking
+    infinite health with speed hacks.
+  </p>
+  <h2>Palworld invincibility on dedicated servers</h2>
+  <p>
+    Server admins can grant cheat privileges without a client trainer. Document who enabled admin Palworld cheat
+    codes so co-op partners know why damage stopped registering.
+  </p>
+  <ol>
+    {palworldGodModeSteps.map((step) => (
+      <li>
+        <strong>{step.name}</strong> — {step.text}
+      </li>
+    ))}
+  </ol>
+</SeoGuideLayout>

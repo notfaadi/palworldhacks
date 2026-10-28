@@ -1,0 +1,29 @@
+---
+import SeoGuideLayout from '../../layouts/SeoGuideLayout.astro';
+import { SEO_INTROS } from '../../data/seo-intros';
+import { checkoutPath } from '../../config/checkout';
+import { Button } from '@/components/starwind/button';
+---
+
+<SeoGuideLayout pathname="/download/" breadcrumbLabel="Download" intro={SEO_INTROS['/download/']!}>
+  <h2>Palworld hack download — free bundle</h2>
+  <p>
+    The community archive includes trainer documentation, mod menu feature notes and a console command quick sheet
+    aligned to Palworld 1.0.5. For licensed Elite, Cloud DMA and utilities, use our Levo checkout—still no survey
+    funnels on this site.
+  </p>
+  <div class="not-prose my-6 flex flex-wrap gap-3">
+    <Button as="a" href={checkoutPath('palworld')} variant="primary" size="lg">
+      Get Palworld Elite (Levo)
+    </Button>
+    <Button as="a" href="/how-to-install/" variant="outline" size="lg">
+      Install guide
+    </Button>
+  </div>
+  <h2>Palworld cheat download checklist</h2>
+  <ul>
+    <li>Verify file hash from Discord status before extracting</li>
+    <li>Exclude only the folder you trust in Windows Defender</li>
+    <li>Back up saves before first trainer launch on Steam or Game Pass</li>
+  </ul>
+</SeoGuideLayout>

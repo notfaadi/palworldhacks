@@ -1,14 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import {
-  blogPosts,
-  getBlogTags,
-  getFeaturedBlogPost,
-  getNonFeaturedBlogPosts,
-} from '../../data/blog';
+import { blogPosts, getBlogTags, getFeaturedBlogPost } from '../../data/blog';
 import { t } from '../../i18n';
-import { resolvePageSeo } from '../../config/seo';
+import { resolvePageSeo, canonicalUrl } from '../../config/seo';
+import { getSeoPageEntry } from '../../data/seo';
 import { breadcrumbSchema, collectionPageSchema } from '../../utils/schema';
+import { blogPagePath, getBlogPageCount, getBlogPostsForPage } from '../../utils/blog-pagination';
+import SeoInternalCta from '../../components/SeoInternalCta.astro';
 import { CARD_IMAGE_WIDTHS, webpSrc } from '../../utils/responsiveImage';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BlogCard from '../../components/BlogCard.astro';
@@ -20,13 +18,19 @@ import { Button } from '@/components/starwind/button';
 import { ROUTES } from '../../utils/path';
 
 const seo = resolvePageSeo('/blog/');
+const entry = getSeoPageEntry('/blog/')!;
 const breadcrumbs = [
   { name: 'Home', path: '/' },
   { name: 'Blog', path: '/blog/' },
 ];
 
+const pageOne = getBlogPostsForPage(1);
+const totalBlogPages = getBlogPageCount();
+const nextPageHref = totalBlogPages > 1 ? blogPagePath(2) : undefined;
+
 const featured = getFeaturedBlogPost();
-const gridPosts = getNonFeaturedBlogPosts();
+const showFeatured = featured && pageOne.posts.some((p) => p.slug === featured.slug);
+const gridForPage = pageOne.posts.filter((p) => p.slug !== featured?.slug);
 const tags = getBlogTags();
 const lcpImage = webpSrc(featured?.image ?? blogPosts[0]!.image, CARD_IMAGE_WIDTHS[0]);
 
@@ -36,15 +40,18 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
 <BaseLayout
   title={seo.title}
   description={seo.description}
+  ogImage={seo.ogImage}
+  ogImageAlt={entry.h1}
   jsonLd={[
     collectionPageSchema({
-      name: t.blog.title,
-      description: t.blog.subtitle,
+      name: entry.h1,
+      description: entry.description,
       url: '/blog/',
     }),
     breadcrumbSchema(breadcrumbs),
   ]}
 >
+  {nextPageHref && <link slot="head" rel="next" href={canonicalUrl(nextPageHref)} />}
   <link slot="head" rel="preload" as="image" href={lcpImage} type="image/webp" fetchpriority="high" />
 
   <section class="py-8 md:py-12">
@@ -62,8 +69,8 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
     <div class="mx-auto max-w-6xl px-5">
       <header class="section-header max-w-2xl">
         <p class="section-header__eyebrow">{t.blog.eyebrow}</p>
-        <h1 id="blog-latest-title" class="section-header__title">{t.blog.latestTitle}</h1>
-        <p class="section-header__subtitle">{t.blog.latestSubtitle}</p>
+        <h1 id="blog-latest-title" class="section-header__title">{entry.h1}</h1>
+        <p class="section-header__subtitle">{entry.description}</p>
       </header>
 
       <div class="mt-8 flex flex-col gap-4 lg:mt-10 lg:flex-row lg:items-end lg:justify-between lg:gap-6">
@@ -108,7 +115,7 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
       </div>
 
       {
-        featured && (
+        showFeatured && featured && (
           <div id="blog-featured" class="mt-10" data-blog-featured>
             <BlogCard post={featured} index={0} eager showDate layout="featured" />
           </div>
@@ -116,7 +123,7 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
       }
 
       <div id="blog-grid" class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-10">
-        {gridPosts.map((post, index) => (
+        {gridForPage.map((post, index) => (
           <BlogCard post={post} index={index} showDate />
         ))}
       </div>
@@ -125,11 +132,21 @@ const tagIcon = (tag: string): IconName => blogTagIcons[tag] ?? 'tag';
         {t.blog.emptyFilter}
       </p>
 
-      <div class="mt-12 flex justify-start lg:justify-center">
+      <div class="mt-12 flex flex-wrap items-center justify-between gap-4">
+        {nextPageHref ? (
+          <a href={nextPageHref} class="text-sm font-medium text-primary hover:underline">
+            Older posts →
+          </a>
+        ) : (
+          <span />
+        )}
         <Button as="a" href={ROUTES.home} variant="outline">
           <Icon name="chevronLeft" size={16} />
           Back to home
         </Button>
+      </div>
+      <div class="mt-8">
+        <SeoInternalCta />
       </div>
     </div>
   </section>

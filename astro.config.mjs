@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import { sitemapSerialize } from './src/config/sitemap.ts';
 
 export default defineConfig({
-  site: 'http://localhost:4321',
+  site: 'https://getpalworldhack.net',
   trailingSlash: 'always',
   redirects: {
     '/cheats/': '/products/palworld-hacks/',
