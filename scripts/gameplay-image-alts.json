@@ -1,0 +1,85 @@
+{
+  "gameplay": [
+    {
+      "file": "palworld-esp-wallhack.png",
+      "alt": "Palworld ESP wallhack cheat gameplay with player boxes distance tags and aimbot FOV",
+      "srcIndex": 0
+    },
+    {
+      "file": "palworld-aimbot-combat.png",
+      "alt": "Palworld aimbot cheat gameplay with FOV circle and green skeleton ESP on enemy",
+      "srcIndex": 1
+    },
+    {
+      "file": "palworld-player-esp.png",
+      "alt": "Palworld player ESP wallhack showing skeletons boxes and distance meters",
+      "srcIndex": 2
+    },
+    {
+      "file": "palworld-radar-hack.png",
+      "alt": "Palworld radar and ESP overlay with enemy name tags health and range markers",
+      "srcIndex": 3
+    },
+    {
+      "file": "palworld-auto-aim.png",
+      "alt": "Palworld sniper aimbot cheat with green ESP box weapon label and FOV circle",
+      "srcIndex": 4
+    },
+    {
+      "file": "palworld-loot-radar.png",
+      "alt": "Palworld loot and chest ESP gameplay with enemy boxes and distance trackers",
+      "srcIndex": 5
+    },
+    {
+      "file": "palworld-skin-changer.png",
+      "alt": "Palworld cheat gameplay with chams skeleton ESP and aim lock on pier",
+      "srcIndex": 6
+    },
+    {
+      "file": "palworld-thermal-esp.png",
+      "alt": "Palworld thermal vision ESP showing skeleton wallhack HP and distance",
+      "srcIndex": 7
+    },
+    {
+      "file": "palworld-build-fight-esp.png",
+      "alt": "Palworld build fight ESP wallhack with names HP bars and FOV circle",
+      "srcIndex": 8
+    },
+    {
+      "file": "palworld-arena-wallhack.png",
+      "alt": "Palworld arena wallhack ESP with wireframe players and weapon tags",
+      "srcIndex": 9
+    },
+    {
+      "file": "palworld-spawn-island-esp.png",
+      "alt": "Palworld spawn island ESP with skeleton boxes and aimbot reticle",
+      "srcIndex": 10
+    },
+    {
+      "file": "palworld-long-range-esp.png",
+      "alt": "Palworld long range ESP wallhack with enemy names health and weapons",
+      "srcIndex": 11
+    },
+    {
+      "file": "palworld-aimbot-lock.png",
+      "alt": "Palworld aimbot lock with green skeleton ESP FOV circle and head priority",
+      "srcIndex": 12
+    },
+    {
+      "file": "palworld-chams-esp.png",
+      "alt": "Palworld chams and skeleton ESP cheat on wooden pier",
+      "srcIndex": 13
+    },
+    {
+      "file": "palworld-squad-esp.png",
+      "alt": "Palworld multi-player ESP wallhack with boxes skeletons and distances",
+      "srcIndex": 14
+    },
+    {
+      "file": "palworld-combat-esp.png",
+      "alt": "Palworld combat ESP and aimbot overlay in open field fight",
+      "srcIndex": 15
+    }
+  ],
+  "sourceCount": 16
+}

@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+Disallow: /go/
+
+Sitemap: https://localhost:4321/sitemap.xml
+Sitemap: https://localhost:4321/sitemap-pages.xml
+Sitemap: https://localhost:4321/sitemap-products.xml
+Sitemap: https://localhost:4321/sitemap-blog.xml
+Sitemap: https://localhost:4321/sitemap-forum.xml
+
+# RSS: https://localhost:4321/rss.xml
