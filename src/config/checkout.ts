@@ -1,15 +1,16 @@
-import { CHECKOUT_URLS } from './checkout-redirects.mjs';
+import { CHECKOUT_URLS, LEVO_PALWORLD_CHECKOUT } from './checkout-redirects.mjs';
 
-/**
- * External checkout URLs — server-side redirect targets only (never use as visible href).
- */
+/** All Buy now buttons use this Levo Cheats checkout URL. */
+export { LEVO_PALWORLD_CHECKOUT };
+
 export const CHECKOUT = CHECKOUT_URLS;
 
 export type CheckoutProduct = keyof typeof CHECKOUT;
 
-/** URL slug for /go/[slug]/ checkout redirect pages. */
+/** URL slug for legacy /go/[slug]/ redirects (middleware + static _redirects). */
 export const CHECKOUT_SLUGS: Record<CheckoutProduct, string> = {
   palworld: 'palworld',
+  cloudDma: 'cloud-dma',
   skinChanger: 'skin-changer',
   hwidSpoofer: 'hwid-spoofer',
   ugc: 'ugc',
@@ -19,60 +20,54 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
   Object.entries(CHECKOUT_SLUGS).map(([product, slug]) => [slug, product as CheckoutProduct]),
 ) as Record<string, CheckoutProduct>;
 
-/** Internal checkout path shown to users (hides external URL on hover). */
-export function checkoutPath(product: CheckoutProduct = 'palworld'): string {
-  return `/go/${CHECKOUT_SLUGS[product]}/`;
+/** Levo Cheats checkout — used on every Buy now / checkout CTA. */
+export function checkoutPath(_product: CheckoutProduct = 'palworld'): string {
+  return LEVO_PALWORLD_CHECKOUT;
 }
 
-/** Default product checkout redirect (replaces legacy Discord CTAs). */
-export const PRIMARY_CHECKOUT_PATH = checkoutPath('palworld');
+export const PRIMARY_CHECKOUT_PATH = LEVO_PALWORLD_CHECKOUT;
 
-/** Map internal product slugs to checkout redirect paths. */
-export function checkoutForSlug(slug: string): string {
-  switch (slug) {
-    case 'unlock-all':
-      return checkoutPath('skinChanger');
-    case 'hwid-spoofer':
-      return checkoutPath('hwidSpoofer');
-    case 'ugc':
-    case 'account-recovery':
-      return checkoutPath('ugc');
-    case 'lite':
-    case 'pro':
-    case 'elite':
-    default:
-      return checkoutPath('palworld');
-  }
+export function checkoutForSlug(_slug: string): string {
+  return LEVO_PALWORLD_CHECKOUT;
 }
 
-/** Resolve blog CTA or legacy href values to internal checkout paths. */
+/** Normalize blog CTAs and legacy affiliate URLs to Levo checkout. */
 export function resolveCheckoutHref(href: string): string {
-  if (!href.startsWith('http')) {
-    return href.startsWith('/') ? href : `/${href}`;
+  const trimmed = href.trim();
+  if (!trimmed) return LEVO_PALWORLD_CHECKOUT;
+
+  if (trimmed.includes('zadeyo.com')) {
+    return LEVO_PALWORLD_CHECKOUT;
   }
 
-  for (const [product, url] of Object.entries(CHECKOUT) as [CheckoutProduct, string][]) {
-    if (href === url || href.startsWith(`${url}?`) || href.startsWith(`${url}/`)) {
-      return checkoutPath(product);
+  if (trimmed.startsWith('/go/')) {
+    return LEVO_PALWORLD_CHECKOUT;
+  }
+
+  if (!trimmed.startsWith('http')) {
+    return trimmed.startsWith('/') ? trimmed : `/${trimmed}`;
+  }
+
+  if (trimmed.includes('levocheats.com')) {
+    return trimmed;
+  }
+
+  for (const url of Object.values(CHECKOUT)) {
+    if (trimmed === url || trimmed.startsWith(`${url}?`) || trimmed.startsWith(`${url}/`)) {
+      return LEVO_PALWORLD_CHECKOUT;
     }
   }
 
-  // Legacy / encoded product paths → internal checkout
-  if (href.includes('%2Fproducts%2Fcloud-dma') || href.includes('/products/cloud-dma')) {
-    return checkoutPath('palworld');
-  }
-  if (href.includes('%2Fproducts%2Fskin-changer') || href.includes('/products/skin-changer')) {
-    return checkoutPath('skinChanger');
-  }
-  if (href.includes('%2Fproducts%2Fhwid-spoofer') || href.includes('/products/hwid-spoofer')) {
-    return checkoutPath('hwidSpoofer');
-  }
-  if (href.includes('%2Fproducts%2Fugc') || href.includes('/products/ugc')) {
-    return checkoutPath('ugc');
-  }
-  if (href.includes('%2Fproducts%2Fpalworld') || href.includes('/products/palworld')) {
-    return checkoutPath('palworld');
+  if (
+    trimmed.includes('%2Fproducts%2F') ||
+    trimmed.includes('/products/palworld') ||
+    trimmed.includes('/products/cloud-dma') ||
+    trimmed.includes('/products/skin-changer') ||
+    trimmed.includes('/products/hwid-spoofer') ||
+    trimmed.includes('/products/ugc')
+  ) {
+    return LEVO_PALWORLD_CHECKOUT;
   }
 
-  return href;
+  return trimmed;
 }

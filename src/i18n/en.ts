@@ -249,11 +249,21 @@ export const en: Translations = {
   products: {
     eyebrow: 'Shop',
     title: 'Buy Palworld hacks',
-    subtitle: 'Elite Palworld hacks, HWID spoofer, UGC recovery and Skin Changer — pick what you need.',
+    subtitle: 'Cloud DMA, Elite Palworld hacks, HWID spoofer, UGC recovery and Skin Changer — pick what you need.',
     viewAll: 'View all cheats',
     get: 'Buy',
     explore: 'Explore',
     items: [
+      {
+        badge: 'Available',
+        category: 'DMA hardware',
+        title: 'Palworld Cloud DMA',
+        subtitle: 'Cloud-hosted DMA suite',
+        desc: 'Buy Palworld Cloud DMA for hardware-backed reads, low-latency cloud relay, and Palworld-ready firmware profiles with operator setup support.',
+        features: ['DMA card compatibility scan', 'Cloud relay & firmware sync', 'Palworld memory profile', 'External overlay pairing', 'Operator onboarding'],
+        more: 11,
+        href: `${productBase}cloud-dma/`,
+      },
       {
         badge: 'Available',
         category: 'System utility',

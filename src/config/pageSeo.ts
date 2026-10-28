@@ -15,14 +15,19 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Buy undetected Palworld hacks for PC — aimbot, ESP, wallhack, radar, loot ESP and skin changer. Updated after every Palworld anti-cheat patch.',
   },
   '/products/palworld-hacks/': {
-    title: 'Buy Palworld Hacks | Elite, HWID Spoofer & Skin Changer',
+    title: 'Buy Palworld Hacks | Cloud DMA, Elite & Utilities',
     description:
-      'Shop Palworld hacks for PC: Elite aimbot & ESP wallhack, HWID spoofer, UGC recovery and Skin Changer. Instant delivery after checkout.',
+      'Shop Palworld hacks for PC: Cloud DMA, Elite aimbot & ESP wallhack, HWID spoofer, UGC recovery and Skin Changer. Checkout via Levo Cheats.',
   },
   '/products/palworld-hacks/elite/': {
     title: 'Buy Palworld Elite Cheats | Aimbot, ESP & Loot Assist',
     description:
       'Buy Palworld Elite cheats with aimbot, ESP wallhack, loot assist, Auto Finish, Skin Changer and priority anti-cheat patch updates.',
+  },
+  '/products/palworld-hacks/cloud-dma/': {
+    title: 'Buy Palworld Cloud DMA | Hardware DMA Suite',
+    description:
+      'Buy Palworld Cloud DMA — hardware-backed reads, cloud relay, Palworld firmware profiles and operator setup through Levo Cheats checkout.',
   },
   '/products/palworld-hacks/hwid-spoofer/': {
     title: 'Buy Palworld HWID Spoofer | Hardware Ban Bypass',

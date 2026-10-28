@@ -88,6 +88,12 @@ export const productRelatedBlogSlugs: Record<string, string[]> = {
     'palworld-cheats-features-guide',
     'palworld-stream-proof-setup',
   ],
+  'cloud-dma': [
+    'palworld-external-cheat-guide',
+    'palworld-cheats-features-guide',
+    'how-to-buy-palworld-cheats-2026',
+    'eac-patch-day-checklist',
+  ],
 };
 
 const productBase = '/products/palworld-hacks/';
@@ -356,6 +362,18 @@ const utilityBodies: Record<string, ProductPage['body']> = {
       text: 'Some anti-cheat bans cannot be reversed. UGC organizes evidence and follow-ups for Steam review. Pair with [HWID Spoofer](/products/palworld-hacks/hwid-spoofer/) when hardware is flagged, or a new account when reputation is burned.',
     },
   ],
+  'cloud-dma': [
+    { type: 'h2', text: 'When Cloud DMA fits' },
+    {
+      type: 'p',
+      text: 'Cloud DMA pairs a compatible DMA card with a hosted relay so Palworld reads stay off your main game PC. Best for operators who already run external overlays and want hardware isolation with remote firmware updates.',
+    },
+    { type: 'h2', text: 'Setup expectations' },
+    {
+      type: 'p',
+      text: 'Confirm card compatibility in the portal, flash the Palworld profile bundle, then pair with your external loader. Discord support walks through cabling, second-PC networking, and verification before you queue.',
+    },
+  ],
   'unlock-all': [
     { type: 'h2', text: 'Local preview only' },
     {
@@ -462,6 +480,38 @@ const productContent: Record<
       paragraphs: [
         'Elite includes Lite and Pro modules, plus loot assist, Auto Finish, Auto Shield Break, Skin Changer, full ESP wallhack and faster patch priority.',
         'Slots are limited. Discord support helps you set safer profiles before Ranked. Check the status banner on localhost:4321 before you buy.',
+      ],
+    },
+  },
+  'cloud-dma': {
+    images: slide('gpThermal', 'gpBuildFight', 'gpLongRange'),
+    goodToKnow:
+      'Cloud DMA requires supported DMA hardware and a second PC or laptop on the same network. Confirm the live status banner and firmware version before purchase or launch.',
+    limitations:
+      'DMA does not remove anti-cheat or account risk. Unsupported cards, bad cabling, or outdated firmware can fail verification. You accept all hardware and network configuration risk.',
+    systemRequirements: [
+      { icon: 'reqWindows', text: 'Two Windows 10/11 64-bit systems (game PC + DMA host) on a stable LAN.' },
+      { icon: 'reqCpu', text: 'Compatible DMA card listed in the operator portal compatibility scan.' },
+      { icon: 'reqWifi', text: 'Low-latency network between DMA host and cloud relay endpoint.' },
+      { icon: 'reqSettings', text: 'Administrator access on both machines for firmware and loader setup.' },
+    ],
+    fullFeatures: [
+      'DMA compatibility scan',
+      'Cloud relay provisioning',
+      'Palworld memory profile bundle',
+      'Firmware sync & rollback',
+      'Second-PC networking guide',
+      'External overlay pairing',
+      'Latency health dashboard',
+      'Portal verification tools',
+      'Discord operator onboarding',
+      'Patch-day firmware notices',
+    ],
+    overview: {
+      title: 'Palworld Cloud DMA',
+      paragraphs: [
+        'Cloud DMA delivers hardware-backed game reads through a managed cloud relay—built for Palworld operators who want physical isolation from the game PC.',
+        'Includes compatibility scanning, Palworld-tuned firmware profiles, overlay pairing, and guided setup through the operator portal and Discord.',
       ],
     },
   },
@@ -617,7 +667,16 @@ function buildUtilityPages(): ProductPage[] {
     });
 }
 
-export const productPages: ProductPage[] = [...buildTierPages(), ...buildUtilityPages()];
+function orderProductPages(pages: ProductPage[]): ProductPage[] {
+  const cloudDma = pages.find((p) => p.slug === 'cloud-dma');
+  const rest = pages.filter((p) => p.slug !== 'cloud-dma');
+  return cloudDma ? [cloudDma, ...rest] : pages;
+}
+
+export const productPages: ProductPage[] = orderProductPages([
+  ...buildTierPages(),
+  ...buildUtilityPages(),
+]);
 
 export const cheatPages = productPages.filter((p) => p.kind === 'tier');
 
@@ -643,19 +702,9 @@ export const heroSlides = slide(
   'gpMapHack',
   'gpScripts',
   'gpHeroEsp',
-  'gpZoomHack',
   'gpAutoKill',
   'gpFarmBot',
-  'gpBuildFight',
-  'gpSpawn',
-  'gpSquad',
   'gpCombat',
-  'gpAimLock',
-  'gpThermal',
-  'gpArena',
-  'gpLongRange',
-  'gpChams',
-  'gpSkinChanger',
 );
 
 export const productHub = {

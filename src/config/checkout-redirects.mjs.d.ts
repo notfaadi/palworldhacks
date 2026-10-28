@@ -1,5 +1,8 @@
+export declare const LEVO_PALWORLD_CHECKOUT: string;
+
 export declare const CHECKOUT_URLS: {
   readonly palworld: string;
+  readonly cloudDma: string;
   readonly skinChanger: string;
   readonly hwidSpoofer: string;
   readonly ugc: string;

@@ -1,15 +1,21 @@
-/** Checkout destinations keyed by internal product id (no affiliate codes). */
+/** Levo Cheats checkout (all Buy now buttons). */
+export const LEVO_PALWORLD_CHECKOUT = 'https://levocheats.com/go/FDI?to=%2Fpalworld-cheats';
+
+/** Checkout destinations keyed by internal product id. */
 export const CHECKOUT_URLS = {
-  palworld: 'https://zadeyo.com/go/QRH?to=%2Fproducts%2Fpalworld',
-  skinChanger: 'https://zadeyo.com/products/skin-changer',
-  hwidSpoofer: 'https://zadeyo.com/products/hwid-spoofer',
-  ugc: 'https://zadeyo.com/products/ugc',
+  palworld: LEVO_PALWORLD_CHECKOUT,
+  cloudDma: LEVO_PALWORLD_CHECKOUT,
+  skinChanger: LEVO_PALWORLD_CHECKOUT,
+  hwidSpoofer: LEVO_PALWORLD_CHECKOUT,
+  ugc: LEVO_PALWORLD_CHECKOUT,
 };
 
 /** Checkout paths → external product URLs (used by Node serve + Astro middleware). */
 export const CHECKOUT_PATH_REDIRECTS = new Map([
   ['/go/palworld', CHECKOUT_URLS.palworld],
   ['/go/palworld/', CHECKOUT_URLS.palworld],
+  ['/go/cloud-dma', CHECKOUT_URLS.cloudDma],
+  ['/go/cloud-dma/', CHECKOUT_URLS.cloudDma],
   ['/go/skin-changer', CHECKOUT_URLS.skinChanger],
   ['/go/skin-changer/', CHECKOUT_URLS.skinChanger],
   ['/go/hwid-spoofer', CHECKOUT_URLS.hwidSpoofer],
